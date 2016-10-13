@@ -1,3 +1,6 @@
+-- | This module contains 'FontAwesome', a simple but comprehensive enumeration
+-- of all <http://fontawesome.io/ Font Awesome> icon classes as a data type.
+
 module Web.FontAwesomeType where
 
 import Data.String (IsString)
@@ -5,739 +8,737 @@ import Data.String (IsString)
 -- | An enumeration of all Font Awesome icons. The constructor naming comes from
 -- a simple translation from dash-case (e.g. @fa-mortar-board@) to MixedCase
 -- (e.g. @FaMortarBoard@).
---
--- See <http://fontawesome.io/> for the rendered icons.
 data FontAwesome
-  = Fa500px                                -- ^ fa-500px 4.4
-  | FaAdjust                               -- ^ fa-adjust
-  | FaAdn                                  -- ^ fa-adn
-  | FaAlignCenter                          -- ^ fa-align-center
-  | FaAlignJustify                         -- ^ fa-align-justify
-  | FaAlignLeft                            -- ^ fa-align-left
-  | FaAlignRight                           -- ^ fa-align-right
-  | FaAmazon                               -- ^ fa-amazon 4.4
-  | FaAmbulance                            -- ^ fa-ambulance
-  | FaAmericanSignLanguageInterpreting     -- ^ fa-american-sign-language-interpreting 4.6
-  | FaAnchor                               -- ^ fa-anchor
-  | FaAndroid                              -- ^ fa-android
-  | FaAngellist                            -- ^ fa-angellist 4.2
-  | FaAngleDoubleDown                      -- ^ fa-angle-double-down
-  | FaAngleDoubleLeft                      -- ^ fa-angle-double-left
-  | FaAngleDoubleRight                     -- ^ fa-angle-double-right
-  | FaAngleDoubleUp                        -- ^ fa-angle-double-up
-  | FaAngleDown                            -- ^ fa-angle-down
-  | FaAngleLeft                            -- ^ fa-angle-left
-  | FaAngleRight                           -- ^ fa-angle-right
-  | FaAngleUp                              -- ^ fa-angle-up
-  | FaApple                                -- ^ fa-apple
-  | FaArchive                              -- ^ fa-archive
-  | FaAreaChart                            -- ^ fa-area-chart 4.2
-  | FaArrowCircleDown                      -- ^ fa-arrow-circle-down
-  | FaArrowCircleLeft                      -- ^ fa-arrow-circle-left
-  | FaArrowCircleODown                     -- ^ fa-arrow-circle-o-down
-  | FaArrowCircleOLeft                     -- ^ fa-arrow-circle-o-left 4.0
-  | FaArrowCircleORight                    -- ^ fa-arrow-circle-o-right 4.0
-  | FaArrowCircleOUp                       -- ^ fa-arrow-circle-o-up
-  | FaArrowCircleRight                     -- ^ fa-arrow-circle-right
-  | FaArrowCircleUp                        -- ^ fa-arrow-circle-up
-  | FaArrowDown                            -- ^ fa-arrow-down
-  | FaArrowLeft                            -- ^ fa-arrow-left
-  | FaArrowRight                           -- ^ fa-arrow-right
-  | FaArrowUp                              -- ^ fa-arrow-up
-  | FaArrows                               -- ^ fa-arrows
-  | FaArrowsAlt                            -- ^ fa-arrows-alt
-  | FaArrowsH                              -- ^ fa-arrows-h
-  | FaArrowsV                              -- ^ fa-arrows-v
-  | FaAslInterpreting                      -- ^ fa-asl-interpreting (alias for 'FaAmericanSignLanguageInterpreting') 4.6
-  | FaAssistiveListeningSystems            -- ^ fa-assistive-listening-systems 4.6
-  | FaAsterisk                             -- ^ fa-asterisk
-  | FaAt                                   -- ^ fa-at 4.2
-  | FaAudioDescription                     -- ^ fa-audio-description 4.6
-  | FaAutomobile                           -- ^ fa-automobile (alias for 'FaCar') 4.1
-  | FaBackward                             -- ^ fa-backward
-  | FaBalanceScale                         -- ^ fa-balance-scale 4.4
-  | FaBan                                  -- ^ fa-ban
-  | FaBank                                 -- ^ fa-bank (alias for 'FaUniversity') 4.1
-  | FaBarChart                             -- ^ fa-bar-chart
-  | FaBarChartO                            -- ^ fa-bar-chart-o (alias for 'FaBarChart')
-  | FaBarcode                              -- ^ fa-barcode
-  | FaBars                                 -- ^ fa-bars
-  | FaBattery0                             -- ^ fa-battery-0 (alias for 'FaBatteryEmpty') 4.4
-  | FaBattery1                             -- ^ fa-battery-1 (alias for 'FaBatteryQuarter') 4.4
-  | FaBattery2                             -- ^ fa-battery-2 (alias for 'FaBatteryHalf') 4.4
-  | FaBattery3                             -- ^ fa-battery-3 (alias for 'FaBatteryThreeQuarters') 4.4
-  | FaBattery4                             -- ^ fa-battery-4 (alias for 'FaBatteryFull') 4.4
-  | FaBatteryEmpty                         -- ^ fa-battery-empty 4.4
-  | FaBatteryFull                          -- ^ fa-battery-full 4.4
-  | FaBatteryHalf                          -- ^ fa-battery-half 4.4
-  | FaBatteryQuarter                       -- ^ fa-battery-quarter 4.4
-  | FaBatteryThreeQuarters                 -- ^ fa-battery-three-quarters 4.4
-  | FaBed                                  -- ^ fa-bed 4.3
-  | FaBeer                                 -- ^ fa-beer
-  | FaBehance                              -- ^ fa-behance 4.1
-  | FaBehanceSquare                        -- ^ fa-behance-square 4.1
-  | FaBell                                 -- ^ fa-bell
-  | FaBellO                                -- ^ fa-bell-o
-  | FaBellSlash                            -- ^ fa-bell-slash 4.2
-  | FaBellSlashO                           -- ^ fa-bell-slash-o 4.2
-  | FaBicycle                              -- ^ fa-bicycle 4.2
-  | FaBinoculars                           -- ^ fa-binoculars 4.2
-  | FaBirthdayCake                         -- ^ fa-birthday-cake 4.2
-  | FaBitbucket                            -- ^ fa-bitbucket
-  | FaBitbucketSquare                      -- ^ fa-bitbucket-square
-  | FaBitcoin                              -- ^ fa-bitcoin (alias for 'FaBtc')
-  | FaBlackTie                             -- ^ fa-black-tie 4.4
-  | FaBlind                                -- ^ fa-blind 4.6
-  | FaBluetooth                            -- ^ fa-bluetooth 4.5
-  | FaBluetoothB                           -- ^ fa-bluetooth-b 4.5
-  | FaBold                                 -- ^ fa-bold
-  | FaBolt                                 -- ^ fa-bolt
-  | FaBomb                                 -- ^ fa-bomb 4.1
-  | FaBook                                 -- ^ fa-book
-  | FaBookmark                             -- ^ fa-bookmark
-  | FaBookmarkO                            -- ^ fa-bookmark-o
-  | FaBraille                              -- ^ fa-braille 4.6
-  | FaBriefcase                            -- ^ fa-briefcase
-  | FaBtc                                  -- ^ fa-btc
-  | FaBug                                  -- ^ fa-bug
-  | FaBuilding                             -- ^ fa-building 4.1
-  | FaBuildingO                            -- ^ fa-building-o
-  | FaBullhorn                             -- ^ fa-bullhorn
-  | FaBullseye                             -- ^ fa-bullseye
-  | FaBus                                  -- ^ fa-bus 4.2
-  | FaBuysellads                           -- ^ fa-buysellads 4.3
-  | FaCab                                  -- ^ fa-cab (alias for 'FaTaxi') 4.1
-  | FaCalculator                           -- ^ fa-calculator 4.2
-  | FaCalendar                             -- ^ fa-calendar
-  | FaCalendarCheckO                       -- ^ fa-calendar-check-o 4.4
-  | FaCalendarMinusO                       -- ^ fa-calendar-minus-o 4.4
-  | FaCalendarO                            -- ^ fa-calendar-o
-  | FaCalendarPlusO                        -- ^ fa-calendar-plus-o 4.4
-  | FaCalendarTimesO                       -- ^ fa-calendar-times-o 4.4
-  | FaCamera                               -- ^ fa-camera
-  | FaCameraRetro                          -- ^ fa-camera-retro
-  | FaCar                                  -- ^ fa-car 4.1
-  | FaCaretDown                            -- ^ fa-caret-down
-  | FaCaretLeft                            -- ^ fa-caret-left
-  | FaCaretRight                           -- ^ fa-caret-right
-  | FaCaretSquareODown                     -- ^ fa-caret-square-o-down
-  | FaCaretSquareOLeft                     -- ^ fa-caret-square-o-left 4.0
-  | FaCaretSquareORight                    -- ^ fa-caret-square-o-right
-  | FaCaretSquareOUp                       -- ^ fa-caret-square-o-up
-  | FaCaretUp                              -- ^ fa-caret-up
-  | FaCartArrowDown                        -- ^ fa-cart-arrow-down 4.3
-  | FaCartPlus                             -- ^ fa-cart-plus 4.3
-  | FaCc                                   -- ^ fa-cc 4.2
-  | FaCcAmex                               -- ^ fa-cc-amex 4.2
-  | FaCcDinersClub                         -- ^ fa-cc-diners-club 4.4
-  | FaCcDiscover                           -- ^ fa-cc-discover 4.2
-  | FaCcJcb                                -- ^ fa-cc-jcb 4.4
-  | FaCcMastercard                         -- ^ fa-cc-mastercard 4.2
-  | FaCcPaypal                             -- ^ fa-cc-paypal 4.2
-  | FaCcStripe                             -- ^ fa-cc-stripe 4.2
-  | FaCcVisa                               -- ^ fa-cc-visa 4.2
-  | FaCertificate                          -- ^ fa-certificate
-  | FaChain                                -- ^ fa-chain (alias for 'FaLink')
-  | FaChainBroken                          -- ^ fa-chain-broken
-  | FaCheck                                -- ^ fa-check
-  | FaCheckCircle                          -- ^ fa-check-circle
-  | FaCheckCircleO                         -- ^ fa-check-circle-o
-  | FaCheckSquare                          -- ^ fa-check-square
-  | FaCheckSquareO                         -- ^ fa-check-square-o
-  | FaChevronCircleDown                    -- ^ fa-chevron-circle-down
-  | FaChevronCircleLeft                    -- ^ fa-chevron-circle-left
-  | FaChevronCircleRight                   -- ^ fa-chevron-circle-right
-  | FaChevronCircleUp                      -- ^ fa-chevron-circle-up
-  | FaChevronDown                          -- ^ fa-chevron-down
-  | FaChevronLeft                          -- ^ fa-chevron-left
-  | FaChevronRight                         -- ^ fa-chevron-right
-  | FaChevronUp                            -- ^ fa-chevron-up
-  | FaChild                                -- ^ fa-child 4.1
-  | FaChrome                               -- ^ fa-chrome 4.4
-  | FaCircle                               -- ^ fa-circle
-  | FaCircleO                              -- ^ fa-circle-o
-  | FaCircleONotch                         -- ^ fa-circle-o-notch 4.1
-  | FaCircleThin                           -- ^ fa-circle-thin 4.1
-  | FaClipboard                            -- ^ fa-clipboard
-  | FaClockO                               -- ^ fa-clock-o
-  | FaClone                                -- ^ fa-clone 4.4
-  | FaClose                                -- ^ fa-close (alias for 'FaTimes')
-  | FaCloud                                -- ^ fa-cloud
-  | FaCloudDownload                        -- ^ fa-cloud-download
-  | FaCloudUpload                          -- ^ fa-cloud-upload
-  | FaCny                                  -- ^ fa-cny (alias for 'FaJpy')
-  | FaCode                                 -- ^ fa-code
-  | FaCodeFork                             -- ^ fa-code-fork
-  | FaCodepen                              -- ^ fa-codepen 4.1
-  | FaCodiepie                             -- ^ fa-codiepie 4.5
-  | FaCoffee                               -- ^ fa-coffee
-  | FaCog                                  -- ^ fa-cog
-  | FaCogs                                 -- ^ fa-cogs
-  | FaColumns                              -- ^ fa-columns
-  | FaComment                              -- ^ fa-comment
-  | FaCommentO                             -- ^ fa-comment-o
-  | FaCommenting                           -- ^ fa-commenting 4.4
-  | FaCommentingO                          -- ^ fa-commenting-o 4.4
-  | FaComments                             -- ^ fa-comments
-  | FaCommentsO                            -- ^ fa-comments-o
-  | FaCompass                              -- ^ fa-compass
-  | FaCompress                             -- ^ fa-compress
-  | FaConnectdevelop                       -- ^ fa-connectdevelop 4.3
-  | FaContao                               -- ^ fa-contao 4.4
-  | FaCopy                                 -- ^ fa-copy (alias for 'FaFilesO')
-  | FaCopyright                            -- ^ fa-copyright 4.2
-  | FaCreativeCommons                      -- ^ fa-creative-commons 4.4
-  | FaCreditCard                           -- ^ fa-credit-card
-  | FaCreditCardAlt                        -- ^ fa-credit-card-alt 4.5
-  | FaCrop                                 -- ^ fa-crop
-  | FaCrosshairs                           -- ^ fa-crosshairs
-  | FaCss3                                 -- ^ fa-css3
-  | FaCube                                 -- ^ fa-cube 4.1
-  | FaCubes                                -- ^ fa-cubes 4.1
-  | FaCut                                  -- ^ fa-cut (alias for 'FaScissors')
-  | FaCutlery                              -- ^ fa-cutlery
-  | FaDashboard                            -- ^ fa-dashboard (alias for 'FaTachometer')
-  | FaDashcube                             -- ^ fa-dashcube 4.3
-  | FaDatabase                             -- ^ fa-database 4.1
-  | FaDeaf                                 -- ^ fa-deaf 4.6
-  | FaDeafness                             -- ^ fa-deafness (alias for 'FaDeaf') 4.6
-  | FaDedent                               -- ^ fa-dedent (alias for 'FaOutdent')
-  | FaDelicious                            -- ^ fa-delicious 4.1
-  | FaDesktop                              -- ^ fa-desktop
-  | FaDeviantart                           -- ^ fa-deviantart 4.1
-  | FaDiamond                              -- ^ fa-diamond 4.3
-  | FaDigg                                 -- ^ fa-digg 4.1
-  | FaDollar                               -- ^ fa-dollar (alias for 'FaUsd')
-  | FaDotCircleO                           -- ^ fa-dot-circle-o 4.0
-  | FaDownload                             -- ^ fa-download
-  | FaDribbble                             -- ^ fa-dribbble
-  | FaDropbox                              -- ^ fa-dropbox
-  | FaDrupal                               -- ^ fa-drupal 4.1
-  | FaEdge                                 -- ^ fa-edge 4.5
-  | FaEdit                                 -- ^ fa-edit (alias for 'FaPencilSquareO')
-  | FaEject                                -- ^ fa-eject
-  | FaEllipsisH                            -- ^ fa-ellipsis-h
-  | FaEllipsisV                            -- ^ fa-ellipsis-v
-  | FaEmpire                               -- ^ fa-empire 4.1
-  | FaEnvelope                             -- ^ fa-envelope
-  | FaEnvelopeO                            -- ^ fa-envelope-o
-  | FaEnvelopeSquare                       -- ^ fa-envelope-square 4.1
-  | FaEnvira                               -- ^ fa-envira 4.6
-  | FaEraser                               -- ^ fa-eraser
-  | FaEur                                  -- ^ fa-eur
-  | FaEuro                                 -- ^ fa-euro (alias for 'FaEur')
-  | FaExchange                             -- ^ fa-exchange
-  | FaExclamation                          -- ^ fa-exclamation
-  | FaExclamationCircle                    -- ^ fa-exclamation-circle
-  | FaExclamationTriangle                  -- ^ fa-exclamation-triangle
-  | FaExpand                               -- ^ fa-expand
-  | FaExpeditedssl                         -- ^ fa-expeditedssl 4.4
-  | FaExternalLink                         -- ^ fa-external-link
-  | FaExternalLinkSquare                   -- ^ fa-external-link-square
-  | FaEye                                  -- ^ fa-eye
-  | FaEyeSlash                             -- ^ fa-eye-slash
-  | FaEyedropper                           -- ^ fa-eyedropper 4.2
-  | FaFa                                   -- ^ fa-fa (alias for 'FaFontAwesome') 4.6
-  | FaFacebook                             -- ^ fa-facebook
-  | FaFacebookF                            -- ^ fa-facebook-f (alias for 'FaFacebook')
-  | FaFacebookOfficial                     -- ^ fa-facebook-official 4.3
-  | FaFacebookSquare                       -- ^ fa-facebook-square
-  | FaFastBackward                         -- ^ fa-fast-backward
-  | FaFastForward                          -- ^ fa-fast-forward
-  | FaFax                                  -- ^ fa-fax 4.1
-  | FaFeed                                 -- ^ fa-feed (alias for 'FaRss')
-  | FaFemale                               -- ^ fa-female
-  | FaFighterJet                           -- ^ fa-fighter-jet
-  | FaFile                                 -- ^ fa-file
-  | FaFileArchiveO                         -- ^ fa-file-archive-o 4.1
-  | FaFileAudioO                           -- ^ fa-file-audio-o 4.1
-  | FaFileCodeO                            -- ^ fa-file-code-o 4.1
-  | FaFileExcelO                           -- ^ fa-file-excel-o 4.1
-  | FaFileImageO                           -- ^ fa-file-image-o 4.1
-  | FaFileMovieO                           -- ^ fa-file-movie-o (alias for 'FaFileVideoO') 4.1
-  | FaFileO                                -- ^ fa-file-o
-  | FaFilePdfO                             -- ^ fa-file-pdf-o 4.1
-  | FaFilePhotoO                           -- ^ fa-file-photo-o (alias for 'FaFileImageO') 4.1
-  | FaFilePictureO                         -- ^ fa-file-picture-o (alias for 'FaFileImageO') 4.1
-  | FaFilePowerpointO                      -- ^ fa-file-powerpoint-o 4.1
-  | FaFileSoundO                           -- ^ fa-file-sound-o (alias for 'FaFileAudioO') 4.1
-  | FaFileText                             -- ^ fa-file-text
-  | FaFileTextO                            -- ^ fa-file-text-o
-  | FaFileVideoO                           -- ^ fa-file-video-o 4.1
-  | FaFileWordO                            -- ^ fa-file-word-o 4.1
-  | FaFileZipO                             -- ^ fa-file-zip-o (alias for 'FaFileArchiveO') 4.1
-  | FaFilesO                               -- ^ fa-files-o
-  | FaFilm                                 -- ^ fa-film
-  | FaFilter                               -- ^ fa-filter
-  | FaFire                                 -- ^ fa-fire
-  | FaFireExtinguisher                     -- ^ fa-fire-extinguisher
-  | FaFirefox                              -- ^ fa-firefox 4.4
-  | FaFirstOrder                           -- ^ fa-first-order 4.6
-  | FaFlag                                 -- ^ fa-flag
-  | FaFlagCheckered                        -- ^ fa-flag-checkered
-  | FaFlagO                                -- ^ fa-flag-o
-  | FaFlash                                -- ^ fa-flash (alias for 'FaBolt')
-  | FaFlask                                -- ^ fa-flask
-  | FaFlickr                               -- ^ fa-flickr
-  | FaFloppyO                              -- ^ fa-floppy-o
-  | FaFolder                               -- ^ fa-folder
-  | FaFolderO                              -- ^ fa-folder-o
-  | FaFolderOpen                           -- ^ fa-folder-open
-  | FaFolderOpenO                          -- ^ fa-folder-open-o
-  | FaFont                                 -- ^ fa-font
-  | FaFontAwesome                          -- ^ fa-font-awesome 4.6
-  | FaFonticons                            -- ^ fa-fonticons 4.4
-  | FaFortAwesome                          -- ^ fa-fort-awesome 4.5
-  | FaForumbee                             -- ^ fa-forumbee 4.3
-  | FaForward                              -- ^ fa-forward
-  | FaFoursquare                           -- ^ fa-foursquare
-  | FaFrownO                               -- ^ fa-frown-o
-  | FaFutbolO                              -- ^ fa-futbol-o 4.2
-  | FaGamepad                              -- ^ fa-gamepad
-  | FaGavel                                -- ^ fa-gavel
-  | FaGbp                                  -- ^ fa-gbp
-  | FaGe                                   -- ^ fa-ge (alias for 'FaEmpire') 4.1
-  | FaGear                                 -- ^ fa-gear (alias for 'FaCog')
-  | FaGears                                -- ^ fa-gears (alias for 'FaCogs')
-  | FaGenderless                           -- ^ fa-genderless 4.4
-  | FaGetPocket                            -- ^ fa-get-pocket 4.4
-  | FaGg                                   -- ^ fa-gg 4.4
-  | FaGgCircle                             -- ^ fa-gg-circle 4.4
-  | FaGift                                 -- ^ fa-gift
-  | FaGit                                  -- ^ fa-git 4.1
-  | FaGitSquare                            -- ^ fa-git-square 4.1
-  | FaGithub                               -- ^ fa-github
-  | FaGithubAlt                            -- ^ fa-github-alt
-  | FaGithubSquare                         -- ^ fa-github-square
-  | FaGitlab                               -- ^ fa-gitlab 4.6
-  | FaGittip                               -- ^ fa-gittip (alias for 'FaGratipay')
-  | FaGlass                                -- ^ fa-glass
-  | FaGlide                                -- ^ fa-glide 4.6
-  | FaGlideG                               -- ^ fa-glide-g 4.6
-  | FaGlobe                                -- ^ fa-globe
-  | FaGoogle                               -- ^ fa-google 4.1
-  | FaGooglePlus                           -- ^ fa-google-plus
-  | FaGooglePlusCircle                     -- ^ fa-google-plus-circle (alias for 'FaGooglePlusOfficial') 4.6
-  | FaGooglePlusOfficial                   -- ^ fa-google-plus-official 4.6
-  | FaGooglePlusSquare                     -- ^ fa-google-plus-square
-  | FaGoogleWallet                         -- ^ fa-google-wallet 4.2
-  | FaGraduationCap                        -- ^ fa-graduation-cap 4.1
-  | FaGratipay                             -- ^ fa-gratipay
-  | FaGroup                                -- ^ fa-group (alias for 'FaUsers')
-  | FaHSquare                              -- ^ fa-h-square
-  | FaHackerNews                           -- ^ fa-hacker-news 4.1
-  | FaHandGrabO                            -- ^ fa-hand-grab-o (alias for 'FaHandRockO') 4.4
-  | FaHandLizardO                          -- ^ fa-hand-lizard-o 4.4
-  | FaHandODown                            -- ^ fa-hand-o-down
-  | FaHandOLeft                            -- ^ fa-hand-o-left
-  | FaHandORight                           -- ^ fa-hand-o-right
-  | FaHandOUp                              -- ^ fa-hand-o-up
-  | FaHandPaperO                           -- ^ fa-hand-paper-o 4.4
-  | FaHandPeaceO                           -- ^ fa-hand-peace-o 4.4
-  | FaHandPointerO                         -- ^ fa-hand-pointer-o 4.4
-  | FaHandRockO                            -- ^ fa-hand-rock-o 4.4
-  | FaHandScissorsO                        -- ^ fa-hand-scissors-o 4.4
-  | FaHandSpockO                           -- ^ fa-hand-spock-o 4.4
-  | FaHandStopO                            -- ^ fa-hand-stop-o (alias for 'FaHandPaperO') 4.4
-  | FaHardOfHearing                        -- ^ fa-hard-of-hearing (alias for 'FaDeaf') 4.6
-  | FaHashtag                              -- ^ fa-hashtag 4.5
-  | FaHddO                                 -- ^ fa-hdd-o
-  | FaHeader                               -- ^ fa-header 4.1
-  | FaHeadphones                           -- ^ fa-headphones
-  | FaHeart                                -- ^ fa-heart
-  | FaHeartO                               -- ^ fa-heart-o
-  | FaHeartbeat                            -- ^ fa-heartbeat 4.3
-  | FaHistory                              -- ^ fa-history 4.1
-  | FaHome                                 -- ^ fa-home
-  | FaHospitalO                            -- ^ fa-hospital-o
-  | FaHotel                                -- ^ fa-hotel (alias for 'FaBed') 4.3
-  | FaHourglass                            -- ^ fa-hourglass 4.4
-  | FaHourglass1                           -- ^ fa-hourglass-1 (alias for 'FaHourglassStart') 4.4
-  | FaHourglass2                           -- ^ fa-hourglass-2 (alias for 'FaHourglassHalf') 4.4
-  | FaHourglass3                           -- ^ fa-hourglass-3 (alias for 'FaHourglassEnd') 4.4
-  | FaHourglassEnd                         -- ^ fa-hourglass-end 4.4
-  | FaHourglassHalf                        -- ^ fa-hourglass-half 4.4
-  | FaHourglassO                           -- ^ fa-hourglass-o 4.4
-  | FaHourglassStart                       -- ^ fa-hourglass-start 4.4
-  | FaHouzz                                -- ^ fa-houzz 4.4
-  | FaHtml5                                -- ^ fa-html5
-  | FaICursor                              -- ^ fa-i-cursor 4.4
-  | FaIls                                  -- ^ fa-ils 4.2
-  | FaImage                                -- ^ fa-image (alias for 'FaPictureO')
-  | FaInbox                                -- ^ fa-inbox
-  | FaIndent                               -- ^ fa-indent
-  | FaIndustry                             -- ^ fa-industry 4.4
-  | FaInfo                                 -- ^ fa-info
-  | FaInfoCircle                           -- ^ fa-info-circle
-  | FaInr                                  -- ^ fa-inr
-  | FaInstagram                            -- ^ fa-instagram 4.6
-  | FaInstitution                          -- ^ fa-institution (alias for 'FaUniversity') 4.1
-  | FaInternetExplorer                     -- ^ fa-internet-explorer 4.4
-  | FaIntersex                             -- ^ fa-intersex (alias for 'FaTransgender') 4.3
-  | FaIoxhost                              -- ^ fa-ioxhost 4.2
-  | FaItalic                               -- ^ fa-italic
-  | FaJoomla                               -- ^ fa-joomla 4.1
-  | FaJpy                                  -- ^ fa-jpy
-  | FaJsfiddle                             -- ^ fa-jsfiddle 4.1
-  | FaKey                                  -- ^ fa-key
-  | FaKeyboardO                            -- ^ fa-keyboard-o
-  | FaKrw                                  -- ^ fa-krw
-  | FaLanguage                             -- ^ fa-language 4.1
-  | FaLaptop                               -- ^ fa-laptop
-  | FaLastfm                               -- ^ fa-lastfm 4.2
-  | FaLastfmSquare                         -- ^ fa-lastfm-square 4.2
-  | FaLeaf                                 -- ^ fa-leaf
-  | FaLeanpub                              -- ^ fa-leanpub 4.3
-  | FaLegal                                -- ^ fa-legal (alias for 'FaGavel')
-  | FaLemonO                               -- ^ fa-lemon-o
-  | FaLevelDown                            -- ^ fa-level-down
-  | FaLevelUp                              -- ^ fa-level-up
-  | FaLifeBouy                             -- ^ fa-life-bouy (alias for 'FaLifeRing') 4.1
-  | FaLifeBuoy                             -- ^ fa-life-buoy (alias for 'FaLifeRing') 4.1
-  | FaLifeRing                             -- ^ fa-life-ring 4.1
-  | FaLifeSaver                            -- ^ fa-life-saver (alias for 'FaLifeRing') 4.1
-  | FaLightbulbO                           -- ^ fa-lightbulb-o
-  | FaLineChart                            -- ^ fa-line-chart 4.2
-  | FaLink                                 -- ^ fa-link
-  | FaLinkedin                             -- ^ fa-linkedin
-  | FaLinkedinSquare                       -- ^ fa-linkedin-square
-  | FaLinux                                -- ^ fa-linux
-  | FaList                                 -- ^ fa-list
-  | FaListAlt                              -- ^ fa-list-alt
-  | FaListOl                               -- ^ fa-list-ol
-  | FaListUl                               -- ^ fa-list-ul
-  | FaLocationArrow                        -- ^ fa-location-arrow
-  | FaLock                                 -- ^ fa-lock
-  | FaLongArrowDown                        -- ^ fa-long-arrow-down
-  | FaLongArrowLeft                        -- ^ fa-long-arrow-left
-  | FaLongArrowRight                       -- ^ fa-long-arrow-right
-  | FaLongArrowUp                          -- ^ fa-long-arrow-up
-  | FaLowVision                            -- ^ fa-low-vision 4.6
-  | FaMagic                                -- ^ fa-magic
-  | FaMagnet                               -- ^ fa-magnet
-  | FaMailForward                          -- ^ fa-mail-forward (alias for 'FaShare')
-  | FaMailReply                            -- ^ fa-mail-reply (alias for 'FaReply')
-  | FaMailReplyAll                         -- ^ fa-mail-reply-all (alias for 'FaReplyAll')
-  | FaMale                                 -- ^ fa-male
-  | FaMap                                  -- ^ fa-map 4.4
-  | FaMapMarker                            -- ^ fa-map-marker
-  | FaMapO                                 -- ^ fa-map-o 4.4
-  | FaMapPin                               -- ^ fa-map-pin 4.4
-  | FaMapSigns                             -- ^ fa-map-signs 4.4
-  | FaMars                                 -- ^ fa-mars 4.3
-  | FaMarsDouble                           -- ^ fa-mars-double 4.3
-  | FaMarsStroke                           -- ^ fa-mars-stroke 4.3
-  | FaMarsStrokeH                          -- ^ fa-mars-stroke-h 4.3
-  | FaMarsStrokeV                          -- ^ fa-mars-stroke-v 4.3
-  | FaMaxcdn                               -- ^ fa-maxcdn
-  | FaMeanpath                             -- ^ fa-meanpath 4.2
-  | FaMedium                               -- ^ fa-medium 4.3
-  | FaMedkit                               -- ^ fa-medkit
-  | FaMehO                                 -- ^ fa-meh-o
-  | FaMercury                              -- ^ fa-mercury 4.3
-  | FaMicrophone                           -- ^ fa-microphone
-  | FaMicrophoneSlash                      -- ^ fa-microphone-slash
-  | FaMinus                                -- ^ fa-minus
-  | FaMinusCircle                          -- ^ fa-minus-circle
-  | FaMinusSquare                          -- ^ fa-minus-square
-  | FaMinusSquareO                         -- ^ fa-minus-square-o
-  | FaMixcloud                             -- ^ fa-mixcloud 4.5
-  | FaMobile                               -- ^ fa-mobile
-  | FaMobilePhone                          -- ^ fa-mobile-phone (alias for 'FaMobile')
-  | FaModx                                 -- ^ fa-modx 4.5
-  | FaMoney                                -- ^ fa-money
-  | FaMoonO                                -- ^ fa-moon-o
-  | FaMortarBoard                          -- ^ fa-mortar-board (alias for 'FaGraduationCap') 4.1
-  | FaMotorcycle                           -- ^ fa-motorcycle 4.3
-  | FaMousePointer                         -- ^ fa-mouse-pointer 4.4
-  | FaMusic                                -- ^ fa-music
-  | FaNavicon                              -- ^ fa-navicon (alias for 'FaBars')
-  | FaNeuter                               -- ^ fa-neuter 4.3
-  | FaNewspaperO                           -- ^ fa-newspaper-o 4.2
-  | FaObjectGroup                          -- ^ fa-object-group 4.4
-  | FaObjectUngroup                        -- ^ fa-object-ungroup 4.4
-  | FaOdnoklassniki                        -- ^ fa-odnoklassniki 4.4
-  | FaOdnoklassnikiSquare                  -- ^ fa-odnoklassniki-square 4.4
-  | FaOpencart                             -- ^ fa-opencart 4.4
-  | FaOpenid                               -- ^ fa-openid 4.1
-  | FaOpera                                -- ^ fa-opera 4.4
-  | FaOptinMonster                         -- ^ fa-optin-monster 4.4
-  | FaOutdent                              -- ^ fa-outdent
-  | FaPagelines                            -- ^ fa-pagelines 4.0
-  | FaPaintBrush                           -- ^ fa-paint-brush 4.2
-  | FaPaperPlane                           -- ^ fa-paper-plane 4.1
-  | FaPaperPlaneO                          -- ^ fa-paper-plane-o 4.1
-  | FaPaperclip                            -- ^ fa-paperclip
-  | FaParagraph                            -- ^ fa-paragraph 4.1
-  | FaPaste                                -- ^ fa-paste (alias for 'FaClipboard')
-  | FaPause                                -- ^ fa-pause
-  | FaPauseCircle                          -- ^ fa-pause-circle 4.5
-  | FaPauseCircleO                         -- ^ fa-pause-circle-o 4.5
-  | FaPaw                                  -- ^ fa-paw 4.1
-  | FaPaypal                               -- ^ fa-paypal 4.2
-  | FaPencil                               -- ^ fa-pencil
-  | FaPencilSquare                         -- ^ fa-pencil-square
-  | FaPencilSquareO                        -- ^ fa-pencil-square-o
-  | FaPercent                              -- ^ fa-percent 4.5
-  | FaPhone                                -- ^ fa-phone
-  | FaPhoneSquare                          -- ^ fa-phone-square
-  | FaPhoto                                -- ^ fa-photo (alias for 'FaPictureO')
-  | FaPictureO                             -- ^ fa-picture-o
-  | FaPieChart                             -- ^ fa-pie-chart 4.2
-  | FaPiedPiper                            -- ^ fa-pied-piper 4.6
-  | FaPiedPiperAlt                         -- ^ fa-pied-piper-alt 4.1
-  | FaPiedPiperPp                          -- ^ fa-pied-piper-pp 4.1
-  | FaPinterest                            -- ^ fa-pinterest
-  | FaPinterestP                           -- ^ fa-pinterest-p 4.3
-  | FaPinterestSquare                      -- ^ fa-pinterest-square
-  | FaPlane                                -- ^ fa-plane
-  | FaPlay                                 -- ^ fa-play
-  | FaPlayCircle                           -- ^ fa-play-circle
-  | FaPlayCircleO                          -- ^ fa-play-circle-o
-  | FaPlug                                 -- ^ fa-plug 4.2
-  | FaPlus                                 -- ^ fa-plus
-  | FaPlusCircle                           -- ^ fa-plus-circle
-  | FaPlusSquare                           -- ^ fa-plus-square
-  | FaPlusSquareO                          -- ^ fa-plus-square-o 4.0
-  | FaPowerOff                             -- ^ fa-power-off
-  | FaPrint                                -- ^ fa-print
-  | FaProductHunt                          -- ^ fa-product-hunt 4.5
-  | FaPuzzlePiece                          -- ^ fa-puzzle-piece
-  | FaQq                                   -- ^ fa-qq 4.1
-  | FaQrcode                               -- ^ fa-qrcode
-  | FaQuestion                             -- ^ fa-question
-  | FaQuestionCircle                       -- ^ fa-question-circle
-  | FaQuestionCircleO                      -- ^ fa-question-circle-o 4.6
-  | FaQuoteLeft                            -- ^ fa-quote-left
-  | FaQuoteRight                           -- ^ fa-quote-right
-  | FaRa                                   -- ^ fa-ra (alias for 'FaRebel') 4.1
-  | FaRandom                               -- ^ fa-random
-  | FaRebel                                -- ^ fa-rebel 4.1
-  | FaRecycle                              -- ^ fa-recycle 4.1
-  | FaReddit                               -- ^ fa-reddit 4.1
-  | FaRedditAlien                          -- ^ fa-reddit-alien 4.5
-  | FaRedditSquare                         -- ^ fa-reddit-square 4.1
-  | FaRefresh                              -- ^ fa-refresh
-  | FaRegistered                           -- ^ fa-registered 4.4
-  | FaRemove                               -- ^ fa-remove (alias for 'FaTimes')
-  | FaRenren                               -- ^ fa-renren
-  | FaReorder                              -- ^ fa-reorder (alias for 'FaBars')
-  | FaRepeat                               -- ^ fa-repeat
-  | FaReply                                -- ^ fa-reply
-  | FaReplyAll                             -- ^ fa-reply-all
-  | FaResistance                           -- ^ fa-resistance (alias for 'FaRebel') 4.1
-  | FaRetweet                              -- ^ fa-retweet
-  | FaRmb                                  -- ^ fa-rmb (alias for 'FaJpy')
-  | FaRoad                                 -- ^ fa-road
-  | FaRocket                               -- ^ fa-rocket
-  | FaRotateLeft                           -- ^ fa-rotate-left (alias for 'FaUndo')
-  | FaRotateRight                          -- ^ fa-rotate-right (alias for 'FaRepeat')
-  | FaRouble                               -- ^ fa-rouble (alias for 'FaRub') 4.0
-  | FaRss                                  -- ^ fa-rss
-  | FaRssSquare                            -- ^ fa-rss-square
-  | FaRub                                  -- ^ fa-rub 4.0
-  | FaRuble                                -- ^ fa-ruble (alias for 'FaRub') 4.0
-  | FaRupee                                -- ^ fa-rupee (alias for 'FaInr')
-  | FaSafari                               -- ^ fa-safari 4.4
-  | FaSave                                 -- ^ fa-save (alias for 'FaFloppyO')
-  | FaScissors                             -- ^ fa-scissors
-  | FaScribd                               -- ^ fa-scribd 4.5
-  | FaSearch                               -- ^ fa-search
-  | FaSearchMinus                          -- ^ fa-search-minus
-  | FaSearchPlus                           -- ^ fa-search-plus
-  | FaSellsy                               -- ^ fa-sellsy 4.3
-  | FaSend                                 -- ^ fa-send (alias for 'FaPaperPlane') 4.1
-  | FaSendO                                -- ^ fa-send-o (alias for 'FaPaperPlaneO') 4.1
-  | FaServer                               -- ^ fa-server 4.3
-  | FaShare                                -- ^ fa-share
-  | FaShareAlt                             -- ^ fa-share-alt 4.1
-  | FaShareAltSquare                       -- ^ fa-share-alt-square 4.1
-  | FaShareSquare                          -- ^ fa-share-square
-  | FaShareSquareO                         -- ^ fa-share-square-o
-  | FaShekel                               -- ^ fa-shekel (alias for 'FaIls') 4.2
-  | FaSheqel                               -- ^ fa-sheqel (alias for 'FaIls') 4.2
-  | FaShield                               -- ^ fa-shield
-  | FaShip                                 -- ^ fa-ship 4.3
-  | FaShirtsinbulk                         -- ^ fa-shirtsinbulk 4.3
-  | FaShoppingBag                          -- ^ fa-shopping-bag 4.5
-  | FaShoppingBasket                       -- ^ fa-shopping-basket 4.5
-  | FaShoppingCart                         -- ^ fa-shopping-cart
-  | FaSignIn                               -- ^ fa-sign-in
-  | FaSignLanguage                         -- ^ fa-sign-language 4.6
-  | FaSignOut                              -- ^ fa-sign-out
-  | FaSignal                               -- ^ fa-signal
-  | FaSigning                              -- ^ fa-signing (alias for 'FaSignLanguage') 4.6
-  | FaSimplybuilt                          -- ^ fa-simplybuilt 4.3
-  | FaSitemap                              -- ^ fa-sitemap
-  | FaSkyatlas                             -- ^ fa-skyatlas 4.3
-  | FaSkype                                -- ^ fa-skype
-  | FaSlack                                -- ^ fa-slack 4.1
-  | FaSliders                              -- ^ fa-sliders 4.1
-  | FaSlideshare                           -- ^ fa-slideshare 4.2
-  | FaSmileO                               -- ^ fa-smile-o
-  | FaSnapchat                             -- ^ fa-snapchat 4.6
-  | FaSnapchatGhost                        -- ^ fa-snapchat-ghost 4.6
-  | FaSnapchatSquare                       -- ^ fa-snapchat-square 4.6
-  | FaSoccerBallO                          -- ^ fa-soccer-ball-o (alias for 'FaFutbolO') 4.2
-  | FaSort                                 -- ^ fa-sort
-  | FaSortAlphaAsc                         -- ^ fa-sort-alpha-asc
-  | FaSortAlphaDesc                        -- ^ fa-sort-alpha-desc
-  | FaSortAmountAsc                        -- ^ fa-sort-amount-asc
-  | FaSortAmountDesc                       -- ^ fa-sort-amount-desc
-  | FaSortAsc                              -- ^ fa-sort-asc
-  | FaSortDesc                             -- ^ fa-sort-desc
-  | FaSortDown                             -- ^ fa-sort-down (alias for 'FaSortDesc')
-  | FaSortNumericAsc                       -- ^ fa-sort-numeric-asc
-  | FaSortNumericDesc                      -- ^ fa-sort-numeric-desc
-  | FaSortUp                               -- ^ fa-sort-up (alias for 'FaSortAsc')
-  | FaSoundcloud                           -- ^ fa-soundcloud 4.1
-  | FaSpaceShuttle                         -- ^ fa-space-shuttle 4.1
-  | FaSpinner                              -- ^ fa-spinner
-  | FaSpoon                                -- ^ fa-spoon 4.1
-  | FaSpotify                              -- ^ fa-spotify 4.1
-  | FaSquare                               -- ^ fa-square
-  | FaSquareO                              -- ^ fa-square-o
-  | FaStackExchange                        -- ^ fa-stack-exchange 4.0
-  | FaStackOverflow                        -- ^ fa-stack-overflow
-  | FaStar                                 -- ^ fa-star
-  | FaStarHalf                             -- ^ fa-star-half
-  | FaStarHalfEmpty                        -- ^ fa-star-half-empty (alias for 'FaStarHalfO')
-  | FaStarHalfFull                         -- ^ fa-star-half-full (alias for 'FaStarHalfO')
-  | FaStarHalfO                            -- ^ fa-star-half-o
-  | FaStarO                                -- ^ fa-star-o
-  | FaSteam                                -- ^ fa-steam 4.1
-  | FaSteamSquare                          -- ^ fa-steam-square 4.1
-  | FaStepBackward                         -- ^ fa-step-backward
-  | FaStepForward                          -- ^ fa-step-forward
-  | FaStethoscope                          -- ^ fa-stethoscope
-  | FaStickyNote                           -- ^ fa-sticky-note 4.4
-  | FaStickyNoteO                          -- ^ fa-sticky-note-o 4.4
-  | FaStop                                 -- ^ fa-stop
-  | FaStopCircle                           -- ^ fa-stop-circle 4.5
-  | FaStopCircleO                          -- ^ fa-stop-circle-o 4.5
-  | FaStreetView                           -- ^ fa-street-view 4.3
-  | FaStrikethrough                        -- ^ fa-strikethrough
-  | FaStumbleupon                          -- ^ fa-stumbleupon 4.1
-  | FaStumbleuponCircle                    -- ^ fa-stumbleupon-circle 4.1
-  | FaSubscript                            -- ^ fa-subscript
-  | FaSubway                               -- ^ fa-subway 4.3
-  | FaSuitcase                             -- ^ fa-suitcase
-  | FaSunO                                 -- ^ fa-sun-o
-  | FaSuperscript                          -- ^ fa-superscript
-  | FaSupport                              -- ^ fa-support (alias for 'FaLifeRing') 4.1
-  | FaTable                                -- ^ fa-table
-  | FaTablet                               -- ^ fa-tablet
-  | FaTachometer                           -- ^ fa-tachometer
-  | FaTag                                  -- ^ fa-tag
-  | FaTags                                 -- ^ fa-tags
-  | FaTasks                                -- ^ fa-tasks
-  | FaTaxi                                 -- ^ fa-taxi 4.1
-  | FaTelevision                           -- ^ fa-television 4.4
-  | FaTencentWeibo                         -- ^ fa-tencent-weibo 4.1
-  | FaTerminal                             -- ^ fa-terminal
-  | FaTextHeight                           -- ^ fa-text-height
-  | FaTextWidth                            -- ^ fa-text-width
-  | FaTh                                   -- ^ fa-th
-  | FaThLarge                              -- ^ fa-th-large
-  | FaThList                               -- ^ fa-th-list
-  | FaThemeisle                            -- ^ fa-themeisle 4.6
-  | FaThumbTack                            -- ^ fa-thumb-tack
-  | FaThumbsDown                           -- ^ fa-thumbs-down
-  | FaThumbsODown                          -- ^ fa-thumbs-o-down
-  | FaThumbsOUp                            -- ^ fa-thumbs-o-up
-  | FaThumbsUp                             -- ^ fa-thumbs-up
-  | FaTicket                               -- ^ fa-ticket
-  | FaTimes                                -- ^ fa-times
-  | FaTimesCircle                          -- ^ fa-times-circle
-  | FaTimesCircleO                         -- ^ fa-times-circle-o
-  | FaTint                                 -- ^ fa-tint
-  | FaToggleDown                           -- ^ fa-toggle-down (alias for 'FaCaretSquareODown')
-  | FaToggleLeft                           -- ^ fa-toggle-left (alias for 'FaCaretSquareOLeft') 4.0
-  | FaToggleOff                            -- ^ fa-toggle-off 4.2
-  | FaToggleOn                             -- ^ fa-toggle-on 4.2
-  | FaToggleRight                          -- ^ fa-toggle-right (alias for 'FaCaretSquareORight')
-  | FaToggleUp                             -- ^ fa-toggle-up (alias for 'FaCaretSquareOUp')
-  | FaTrademark                            -- ^ fa-trademark 4.4
-  | FaTrain                                -- ^ fa-train 4.3
-  | FaTransgender                          -- ^ fa-transgender 4.3
-  | FaTransgenderAlt                       -- ^ fa-transgender-alt 4.3
-  | FaTrash                                -- ^ fa-trash 4.2
-  | FaTrashO                               -- ^ fa-trash-o
-  | FaTree                                 -- ^ fa-tree 4.1
-  | FaTrello                               -- ^ fa-trello
-  | FaTripadvisor                          -- ^ fa-tripadvisor 4.4
-  | FaTrophy                               -- ^ fa-trophy
-  | FaTruck                                -- ^ fa-truck
-  | FaTry                                  -- ^ fa-try 4.0
-  | FaTty                                  -- ^ fa-tty 4.2
-  | FaTumblr                               -- ^ fa-tumblr
-  | FaTumblrSquare                         -- ^ fa-tumblr-square
-  | FaTurkishLira                          -- ^ fa-turkish-lira (alias for 'FaTry') 4.0
-  | FaTv                                   -- ^ fa-tv (alias for 'FaTelevision') 4.4
-  | FaTwitch                               -- ^ fa-twitch 4.2
-  | FaTwitter                              -- ^ fa-twitter
-  | FaTwitterSquare                        -- ^ fa-twitter-square
-  | FaUmbrella                             -- ^ fa-umbrella
-  | FaUnderline                            -- ^ fa-underline
-  | FaUndo                                 -- ^ fa-undo
-  | FaUniversalAccess                      -- ^ fa-universal-access 4.6
-  | FaUniversity                           -- ^ fa-university 4.1
-  | FaUnlink                               -- ^ fa-unlink (alias for 'FaChainBroken')
-  | FaUnlock                               -- ^ fa-unlock
-  | FaUnlockAlt                            -- ^ fa-unlock-alt
-  | FaUnsorted                             -- ^ fa-unsorted (alias for 'FaSort')
-  | FaUpload                               -- ^ fa-upload
-  | FaUsb                                  -- ^ fa-usb 4.5
-  | FaUsd                                  -- ^ fa-usd
-  | FaUser                                 -- ^ fa-user
-  | FaUserMd                               -- ^ fa-user-md
-  | FaUserPlus                             -- ^ fa-user-plus 4.3
-  | FaUserSecret                           -- ^ fa-user-secret 4.3
-  | FaUserTimes                            -- ^ fa-user-times 4.3
-  | FaUsers                                -- ^ fa-users
-  | FaVenus                                -- ^ fa-venus 4.3
-  | FaVenusDouble                          -- ^ fa-venus-double 4.3
-  | FaVenusMars                            -- ^ fa-venus-mars 4.3
-  | FaViacoin                              -- ^ fa-viacoin 4.3
-  | FaViadeo                               -- ^ fa-viadeo 4.6
-  | FaViadeoSquare                         -- ^ fa-viadeo-square 4.6
-  | FaVideoCamera                          -- ^ fa-video-camera
-  | FaVimeo                                -- ^ fa-vimeo 4.4
-  | FaVimeoSquare                          -- ^ fa-vimeo-square 4.0
-  | FaVine                                 -- ^ fa-vine 4.1
-  | FaVk                                   -- ^ fa-vk
-  | FaVolumeControlPhone                   -- ^ fa-volume-control-phone 4.6
-  | FaVolumeDown                           -- ^ fa-volume-down
-  | FaVolumeOff                            -- ^ fa-volume-off
-  | FaVolumeUp                             -- ^ fa-volume-up
-  | FaWarning                              -- ^ fa-warning (alias for 'FaExclamationTriangle')
-  | FaWechat                               -- ^ fa-wechat (alias for 'FaWeixin') 4.1
-  | FaWeibo                                -- ^ fa-weibo
-  | FaWeixin                               -- ^ fa-weixin 4.1
-  | FaWhatsapp                             -- ^ fa-whatsapp 4.3
-  | FaWheelchair                           -- ^ fa-wheelchair 4.0
-  | FaWheelchairAlt                        -- ^ fa-wheelchair-alt 4.6
-  | FaWifi                                 -- ^ fa-wifi 4.2
-  | FaWikipediaW                           -- ^ fa-wikipedia-w 4.4
-  | FaWindows                              -- ^ fa-windows
-  | FaWon                                  -- ^ fa-won (alias for 'FaKrw')
-  | FaWordpress                            -- ^ fa-wordpress 4.1
-  | FaWpbeginner                           -- ^ fa-wpbeginner 4.6
-  | FaWpforms                              -- ^ fa-wpforms 4.6
-  | FaWrench                               -- ^ fa-wrench
-  | FaXing                                 -- ^ fa-xing
-  | FaXingSquare                           -- ^ fa-xing-square
-  | FaYCombinator                          -- ^ fa-y-combinator 4.4
-  | FaYCombinatorSquare                    -- ^ fa-y-combinator-square (alias for 'FaHackerNews') 4.1
-  | FaYahoo                                -- ^ fa-yahoo 4.1
-  | FaYc                                   -- ^ fa-yc (alias for 'FaYCombinator') 4.4
-  | FaYcSquare                             -- ^ fa-yc-square (alias for 'FaHackerNews') 4.1
-  | FaYelp                                 -- ^ fa-yelp 4.2
-  | FaYen                                  -- ^ fa-yen (alias for 'FaJpy')
-  | FaYoast                                -- ^ fa-yoast 4.6
-  | FaYoutube                              -- ^ fa-youtube
-  | FaYoutubePlay                          -- ^ fa-youtube-play
-  | FaYoutubeSquare                        -- ^ fa-youtube-square
+  = Fa500px                                -- ^ icon fa-500px 4.4
+  | FaAdjust                               -- ^ icon fa-adjust
+  | FaAdn                                  -- ^ icon fa-adn
+  | FaAlignCenter                          -- ^ icon fa-align-center
+  | FaAlignJustify                         -- ^ icon fa-align-justify
+  | FaAlignLeft                            -- ^ icon fa-align-left
+  | FaAlignRight                           -- ^ icon fa-align-right
+  | FaAmazon                               -- ^ icon fa-amazon 4.4
+  | FaAmbulance                            -- ^ icon fa-ambulance
+  | FaAmericanSignLanguageInterpreting     -- ^ icon fa-american-sign-language-interpreting 4.6
+  | FaAnchor                               -- ^ icon fa-anchor
+  | FaAndroid                              -- ^ icon fa-android
+  | FaAngellist                            -- ^ icon fa-angellist 4.2
+  | FaAngleDoubleDown                      -- ^ icon fa-angle-double-down
+  | FaAngleDoubleLeft                      -- ^ icon fa-angle-double-left
+  | FaAngleDoubleRight                     -- ^ icon fa-angle-double-right
+  | FaAngleDoubleUp                        -- ^ icon fa-angle-double-up
+  | FaAngleDown                            -- ^ icon fa-angle-down
+  | FaAngleLeft                            -- ^ icon fa-angle-left
+  | FaAngleRight                           -- ^ icon fa-angle-right
+  | FaAngleUp                              -- ^ icon fa-angle-up
+  | FaApple                                -- ^ icon fa-apple
+  | FaArchive                              -- ^ icon fa-archive
+  | FaAreaChart                            -- ^ icon fa-area-chart 4.2
+  | FaArrowCircleDown                      -- ^ icon fa-arrow-circle-down
+  | FaArrowCircleLeft                      -- ^ icon fa-arrow-circle-left
+  | FaArrowCircleODown                     -- ^ icon fa-arrow-circle-o-down
+  | FaArrowCircleOLeft                     -- ^ icon fa-arrow-circle-o-left 4.0
+  | FaArrowCircleORight                    -- ^ icon fa-arrow-circle-o-right 4.0
+  | FaArrowCircleOUp                       -- ^ icon fa-arrow-circle-o-up
+  | FaArrowCircleRight                     -- ^ icon fa-arrow-circle-right
+  | FaArrowCircleUp                        -- ^ icon fa-arrow-circle-up
+  | FaArrowDown                            -- ^ icon fa-arrow-down
+  | FaArrowLeft                            -- ^ icon fa-arrow-left
+  | FaArrowRight                           -- ^ icon fa-arrow-right
+  | FaArrowUp                              -- ^ icon fa-arrow-up
+  | FaArrows                               -- ^ icon fa-arrows
+  | FaArrowsAlt                            -- ^ icon fa-arrows-alt
+  | FaArrowsH                              -- ^ icon fa-arrows-h
+  | FaArrowsV                              -- ^ icon fa-arrows-v
+  | FaAslInterpreting                      -- ^ icon alias fa-asl-interpreting (see 'FaAmericanSignLanguageInterpreting') 4.6
+  | FaAssistiveListeningSystems            -- ^ icon fa-assistive-listening-systems 4.6
+  | FaAsterisk                             -- ^ icon fa-asterisk
+  | FaAt                                   -- ^ icon fa-at 4.2
+  | FaAudioDescription                     -- ^ icon fa-audio-description 4.6
+  | FaAutomobile                           -- ^ icon alias fa-automobile (see 'FaCar') 4.1
+  | FaBackward                             -- ^ icon fa-backward
+  | FaBalanceScale                         -- ^ icon fa-balance-scale 4.4
+  | FaBan                                  -- ^ icon fa-ban
+  | FaBank                                 -- ^ icon alias fa-bank (see 'FaUniversity') 4.1
+  | FaBarChart                             -- ^ icon fa-bar-chart
+  | FaBarChartO                            -- ^ icon alias fa-bar-chart-o (see 'FaBarChart')
+  | FaBarcode                              -- ^ icon fa-barcode
+  | FaBars                                 -- ^ icon fa-bars
+  | FaBattery0                             -- ^ icon alias fa-battery-0 (see 'FaBatteryEmpty') 4.4
+  | FaBattery1                             -- ^ icon alias fa-battery-1 (see 'FaBatteryQuarter') 4.4
+  | FaBattery2                             -- ^ icon alias fa-battery-2 (see 'FaBatteryHalf') 4.4
+  | FaBattery3                             -- ^ icon alias fa-battery-3 (see 'FaBatteryThreeQuarters') 4.4
+  | FaBattery4                             -- ^ icon alias fa-battery-4 (see 'FaBatteryFull') 4.4
+  | FaBatteryEmpty                         -- ^ icon fa-battery-empty 4.4
+  | FaBatteryFull                          -- ^ icon fa-battery-full 4.4
+  | FaBatteryHalf                          -- ^ icon fa-battery-half 4.4
+  | FaBatteryQuarter                       -- ^ icon fa-battery-quarter 4.4
+  | FaBatteryThreeQuarters                 -- ^ icon fa-battery-three-quarters 4.4
+  | FaBed                                  -- ^ icon fa-bed 4.3
+  | FaBeer                                 -- ^ icon fa-beer
+  | FaBehance                              -- ^ icon fa-behance 4.1
+  | FaBehanceSquare                        -- ^ icon fa-behance-square 4.1
+  | FaBell                                 -- ^ icon fa-bell
+  | FaBellO                                -- ^ icon fa-bell-o
+  | FaBellSlash                            -- ^ icon fa-bell-slash 4.2
+  | FaBellSlashO                           -- ^ icon fa-bell-slash-o 4.2
+  | FaBicycle                              -- ^ icon fa-bicycle 4.2
+  | FaBinoculars                           -- ^ icon fa-binoculars 4.2
+  | FaBirthdayCake                         -- ^ icon fa-birthday-cake 4.2
+  | FaBitbucket                            -- ^ icon fa-bitbucket
+  | FaBitbucketSquare                      -- ^ icon fa-bitbucket-square
+  | FaBitcoin                              -- ^ icon alias fa-bitcoin (see 'FaBtc')
+  | FaBlackTie                             -- ^ icon fa-black-tie 4.4
+  | FaBlind                                -- ^ icon fa-blind 4.6
+  | FaBluetooth                            -- ^ icon fa-bluetooth 4.5
+  | FaBluetoothB                           -- ^ icon fa-bluetooth-b 4.5
+  | FaBold                                 -- ^ icon fa-bold
+  | FaBolt                                 -- ^ icon fa-bolt
+  | FaBomb                                 -- ^ icon fa-bomb 4.1
+  | FaBook                                 -- ^ icon fa-book
+  | FaBookmark                             -- ^ icon fa-bookmark
+  | FaBookmarkO                            -- ^ icon fa-bookmark-o
+  | FaBraille                              -- ^ icon fa-braille 4.6
+  | FaBriefcase                            -- ^ icon fa-briefcase
+  | FaBtc                                  -- ^ icon fa-btc
+  | FaBug                                  -- ^ icon fa-bug
+  | FaBuilding                             -- ^ icon fa-building 4.1
+  | FaBuildingO                            -- ^ icon fa-building-o
+  | FaBullhorn                             -- ^ icon fa-bullhorn
+  | FaBullseye                             -- ^ icon fa-bullseye
+  | FaBus                                  -- ^ icon fa-bus 4.2
+  | FaBuysellads                           -- ^ icon fa-buysellads 4.3
+  | FaCab                                  -- ^ icon alias fa-cab (see 'FaTaxi') 4.1
+  | FaCalculator                           -- ^ icon fa-calculator 4.2
+  | FaCalendar                             -- ^ icon fa-calendar
+  | FaCalendarCheckO                       -- ^ icon fa-calendar-check-o 4.4
+  | FaCalendarMinusO                       -- ^ icon fa-calendar-minus-o 4.4
+  | FaCalendarO                            -- ^ icon fa-calendar-o
+  | FaCalendarPlusO                        -- ^ icon fa-calendar-plus-o 4.4
+  | FaCalendarTimesO                       -- ^ icon fa-calendar-times-o 4.4
+  | FaCamera                               -- ^ icon fa-camera
+  | FaCameraRetro                          -- ^ icon fa-camera-retro
+  | FaCar                                  -- ^ icon fa-car 4.1
+  | FaCaretDown                            -- ^ icon fa-caret-down
+  | FaCaretLeft                            -- ^ icon fa-caret-left
+  | FaCaretRight                           -- ^ icon fa-caret-right
+  | FaCaretSquareODown                     -- ^ icon fa-caret-square-o-down
+  | FaCaretSquareOLeft                     -- ^ icon fa-caret-square-o-left 4.0
+  | FaCaretSquareORight                    -- ^ icon fa-caret-square-o-right
+  | FaCaretSquareOUp                       -- ^ icon fa-caret-square-o-up
+  | FaCaretUp                              -- ^ icon fa-caret-up
+  | FaCartArrowDown                        -- ^ icon fa-cart-arrow-down 4.3
+  | FaCartPlus                             -- ^ icon fa-cart-plus 4.3
+  | FaCc                                   -- ^ icon fa-cc 4.2
+  | FaCcAmex                               -- ^ icon fa-cc-amex 4.2
+  | FaCcDinersClub                         -- ^ icon fa-cc-diners-club 4.4
+  | FaCcDiscover                           -- ^ icon fa-cc-discover 4.2
+  | FaCcJcb                                -- ^ icon fa-cc-jcb 4.4
+  | FaCcMastercard                         -- ^ icon fa-cc-mastercard 4.2
+  | FaCcPaypal                             -- ^ icon fa-cc-paypal 4.2
+  | FaCcStripe                             -- ^ icon fa-cc-stripe 4.2
+  | FaCcVisa                               -- ^ icon fa-cc-visa 4.2
+  | FaCertificate                          -- ^ icon fa-certificate
+  | FaChain                                -- ^ icon alias fa-chain (see 'FaLink')
+  | FaChainBroken                          -- ^ icon fa-chain-broken
+  | FaCheck                                -- ^ icon fa-check
+  | FaCheckCircle                          -- ^ icon fa-check-circle
+  | FaCheckCircleO                         -- ^ icon fa-check-circle-o
+  | FaCheckSquare                          -- ^ icon fa-check-square
+  | FaCheckSquareO                         -- ^ icon fa-check-square-o
+  | FaChevronCircleDown                    -- ^ icon fa-chevron-circle-down
+  | FaChevronCircleLeft                    -- ^ icon fa-chevron-circle-left
+  | FaChevronCircleRight                   -- ^ icon fa-chevron-circle-right
+  | FaChevronCircleUp                      -- ^ icon fa-chevron-circle-up
+  | FaChevronDown                          -- ^ icon fa-chevron-down
+  | FaChevronLeft                          -- ^ icon fa-chevron-left
+  | FaChevronRight                         -- ^ icon fa-chevron-right
+  | FaChevronUp                            -- ^ icon fa-chevron-up
+  | FaChild                                -- ^ icon fa-child 4.1
+  | FaChrome                               -- ^ icon fa-chrome 4.4
+  | FaCircle                               -- ^ icon fa-circle
+  | FaCircleO                              -- ^ icon fa-circle-o
+  | FaCircleONotch                         -- ^ icon fa-circle-o-notch 4.1
+  | FaCircleThin                           -- ^ icon fa-circle-thin 4.1
+  | FaClipboard                            -- ^ icon fa-clipboard
+  | FaClockO                               -- ^ icon fa-clock-o
+  | FaClone                                -- ^ icon fa-clone 4.4
+  | FaClose                                -- ^ icon alias fa-close (see 'FaTimes')
+  | FaCloud                                -- ^ icon fa-cloud
+  | FaCloudDownload                        -- ^ icon fa-cloud-download
+  | FaCloudUpload                          -- ^ icon fa-cloud-upload
+  | FaCny                                  -- ^ icon alias fa-cny (see 'FaJpy')
+  | FaCode                                 -- ^ icon fa-code
+  | FaCodeFork                             -- ^ icon fa-code-fork
+  | FaCodepen                              -- ^ icon fa-codepen 4.1
+  | FaCodiepie                             -- ^ icon fa-codiepie 4.5
+  | FaCoffee                               -- ^ icon fa-coffee
+  | FaCog                                  -- ^ icon fa-cog
+  | FaCogs                                 -- ^ icon fa-cogs
+  | FaColumns                              -- ^ icon fa-columns
+  | FaComment                              -- ^ icon fa-comment
+  | FaCommentO                             -- ^ icon fa-comment-o
+  | FaCommenting                           -- ^ icon fa-commenting 4.4
+  | FaCommentingO                          -- ^ icon fa-commenting-o 4.4
+  | FaComments                             -- ^ icon fa-comments
+  | FaCommentsO                            -- ^ icon fa-comments-o
+  | FaCompass                              -- ^ icon fa-compass
+  | FaCompress                             -- ^ icon fa-compress
+  | FaConnectdevelop                       -- ^ icon fa-connectdevelop 4.3
+  | FaContao                               -- ^ icon fa-contao 4.4
+  | FaCopy                                 -- ^ icon alias fa-copy (see 'FaFilesO')
+  | FaCopyright                            -- ^ icon fa-copyright 4.2
+  | FaCreativeCommons                      -- ^ icon fa-creative-commons 4.4
+  | FaCreditCard                           -- ^ icon fa-credit-card
+  | FaCreditCardAlt                        -- ^ icon fa-credit-card-alt 4.5
+  | FaCrop                                 -- ^ icon fa-crop
+  | FaCrosshairs                           -- ^ icon fa-crosshairs
+  | FaCss3                                 -- ^ icon fa-css3
+  | FaCube                                 -- ^ icon fa-cube 4.1
+  | FaCubes                                -- ^ icon fa-cubes 4.1
+  | FaCut                                  -- ^ icon alias fa-cut (see 'FaScissors')
+  | FaCutlery                              -- ^ icon fa-cutlery
+  | FaDashboard                            -- ^ icon alias fa-dashboard (see 'FaTachometer')
+  | FaDashcube                             -- ^ icon fa-dashcube 4.3
+  | FaDatabase                             -- ^ icon fa-database 4.1
+  | FaDeaf                                 -- ^ icon fa-deaf 4.6
+  | FaDeafness                             -- ^ icon alias fa-deafness (see 'FaDeaf') 4.6
+  | FaDedent                               -- ^ icon alias fa-dedent (see 'FaOutdent')
+  | FaDelicious                            -- ^ icon fa-delicious 4.1
+  | FaDesktop                              -- ^ icon fa-desktop
+  | FaDeviantart                           -- ^ icon fa-deviantart 4.1
+  | FaDiamond                              -- ^ icon fa-diamond 4.3
+  | FaDigg                                 -- ^ icon fa-digg 4.1
+  | FaDollar                               -- ^ icon alias fa-dollar (see 'FaUsd')
+  | FaDotCircleO                           -- ^ icon fa-dot-circle-o 4.0
+  | FaDownload                             -- ^ icon fa-download
+  | FaDribbble                             -- ^ icon fa-dribbble
+  | FaDropbox                              -- ^ icon fa-dropbox
+  | FaDrupal                               -- ^ icon fa-drupal 4.1
+  | FaEdge                                 -- ^ icon fa-edge 4.5
+  | FaEdit                                 -- ^ icon alias fa-edit (see 'FaPencilSquareO')
+  | FaEject                                -- ^ icon fa-eject
+  | FaEllipsisH                            -- ^ icon fa-ellipsis-h
+  | FaEllipsisV                            -- ^ icon fa-ellipsis-v
+  | FaEmpire                               -- ^ icon fa-empire 4.1
+  | FaEnvelope                             -- ^ icon fa-envelope
+  | FaEnvelopeO                            -- ^ icon fa-envelope-o
+  | FaEnvelopeSquare                       -- ^ icon fa-envelope-square 4.1
+  | FaEnvira                               -- ^ icon fa-envira 4.6
+  | FaEraser                               -- ^ icon fa-eraser
+  | FaEur                                  -- ^ icon fa-eur
+  | FaEuro                                 -- ^ icon alias fa-euro (see 'FaEur')
+  | FaExchange                             -- ^ icon fa-exchange
+  | FaExclamation                          -- ^ icon fa-exclamation
+  | FaExclamationCircle                    -- ^ icon fa-exclamation-circle
+  | FaExclamationTriangle                  -- ^ icon fa-exclamation-triangle
+  | FaExpand                               -- ^ icon fa-expand
+  | FaExpeditedssl                         -- ^ icon fa-expeditedssl 4.4
+  | FaExternalLink                         -- ^ icon fa-external-link
+  | FaExternalLinkSquare                   -- ^ icon fa-external-link-square
+  | FaEye                                  -- ^ icon fa-eye
+  | FaEyeSlash                             -- ^ icon fa-eye-slash
+  | FaEyedropper                           -- ^ icon fa-eyedropper 4.2
+  | FaFa                                   -- ^ icon alias fa-fa (see 'FaFontAwesome') 4.6
+  | FaFacebook                             -- ^ icon fa-facebook
+  | FaFacebookF                            -- ^ icon alias fa-facebook-f (see 'FaFacebook')
+  | FaFacebookOfficial                     -- ^ icon fa-facebook-official 4.3
+  | FaFacebookSquare                       -- ^ icon fa-facebook-square
+  | FaFastBackward                         -- ^ icon fa-fast-backward
+  | FaFastForward                          -- ^ icon fa-fast-forward
+  | FaFax                                  -- ^ icon fa-fax 4.1
+  | FaFeed                                 -- ^ icon alias fa-feed (see 'FaRss')
+  | FaFemale                               -- ^ icon fa-female
+  | FaFighterJet                           -- ^ icon fa-fighter-jet
+  | FaFile                                 -- ^ icon fa-file
+  | FaFileArchiveO                         -- ^ icon fa-file-archive-o 4.1
+  | FaFileAudioO                           -- ^ icon fa-file-audio-o 4.1
+  | FaFileCodeO                            -- ^ icon fa-file-code-o 4.1
+  | FaFileExcelO                           -- ^ icon fa-file-excel-o 4.1
+  | FaFileImageO                           -- ^ icon fa-file-image-o 4.1
+  | FaFileMovieO                           -- ^ icon alias fa-file-movie-o (see 'FaFileVideoO') 4.1
+  | FaFileO                                -- ^ icon fa-file-o
+  | FaFilePdfO                             -- ^ icon fa-file-pdf-o 4.1
+  | FaFilePhotoO                           -- ^ icon alias fa-file-photo-o (see 'FaFileImageO') 4.1
+  | FaFilePictureO                         -- ^ icon alias fa-file-picture-o (see 'FaFileImageO') 4.1
+  | FaFilePowerpointO                      -- ^ icon fa-file-powerpoint-o 4.1
+  | FaFileSoundO                           -- ^ icon alias fa-file-sound-o (see 'FaFileAudioO') 4.1
+  | FaFileText                             -- ^ icon fa-file-text
+  | FaFileTextO                            -- ^ icon fa-file-text-o
+  | FaFileVideoO                           -- ^ icon fa-file-video-o 4.1
+  | FaFileWordO                            -- ^ icon fa-file-word-o 4.1
+  | FaFileZipO                             -- ^ icon alias fa-file-zip-o (see 'FaFileArchiveO') 4.1
+  | FaFilesO                               -- ^ icon fa-files-o
+  | FaFilm                                 -- ^ icon fa-film
+  | FaFilter                               -- ^ icon fa-filter
+  | FaFire                                 -- ^ icon fa-fire
+  | FaFireExtinguisher                     -- ^ icon fa-fire-extinguisher
+  | FaFirefox                              -- ^ icon fa-firefox 4.4
+  | FaFirstOrder                           -- ^ icon fa-first-order 4.6
+  | FaFlag                                 -- ^ icon fa-flag
+  | FaFlagCheckered                        -- ^ icon fa-flag-checkered
+  | FaFlagO                                -- ^ icon fa-flag-o
+  | FaFlash                                -- ^ icon alias fa-flash (see 'FaBolt')
+  | FaFlask                                -- ^ icon fa-flask
+  | FaFlickr                               -- ^ icon fa-flickr
+  | FaFloppyO                              -- ^ icon fa-floppy-o
+  | FaFolder                               -- ^ icon fa-folder
+  | FaFolderO                              -- ^ icon fa-folder-o
+  | FaFolderOpen                           -- ^ icon fa-folder-open
+  | FaFolderOpenO                          -- ^ icon fa-folder-open-o
+  | FaFont                                 -- ^ icon fa-font
+  | FaFontAwesome                          -- ^ icon fa-font-awesome 4.6
+  | FaFonticons                            -- ^ icon fa-fonticons 4.4
+  | FaFortAwesome                          -- ^ icon fa-fort-awesome 4.5
+  | FaForumbee                             -- ^ icon fa-forumbee 4.3
+  | FaForward                              -- ^ icon fa-forward
+  | FaFoursquare                           -- ^ icon fa-foursquare
+  | FaFrownO                               -- ^ icon fa-frown-o
+  | FaFutbolO                              -- ^ icon fa-futbol-o 4.2
+  | FaGamepad                              -- ^ icon fa-gamepad
+  | FaGavel                                -- ^ icon fa-gavel
+  | FaGbp                                  -- ^ icon fa-gbp
+  | FaGe                                   -- ^ icon alias fa-ge (see 'FaEmpire') 4.1
+  | FaGear                                 -- ^ icon alias fa-gear (see 'FaCog')
+  | FaGears                                -- ^ icon alias fa-gears (see 'FaCogs')
+  | FaGenderless                           -- ^ icon fa-genderless 4.4
+  | FaGetPocket                            -- ^ icon fa-get-pocket 4.4
+  | FaGg                                   -- ^ icon fa-gg 4.4
+  | FaGgCircle                             -- ^ icon fa-gg-circle 4.4
+  | FaGift                                 -- ^ icon fa-gift
+  | FaGit                                  -- ^ icon fa-git 4.1
+  | FaGitSquare                            -- ^ icon fa-git-square 4.1
+  | FaGithub                               -- ^ icon fa-github
+  | FaGithubAlt                            -- ^ icon fa-github-alt
+  | FaGithubSquare                         -- ^ icon fa-github-square
+  | FaGitlab                               -- ^ icon fa-gitlab 4.6
+  | FaGittip                               -- ^ icon alias fa-gittip (see 'FaGratipay')
+  | FaGlass                                -- ^ icon fa-glass
+  | FaGlide                                -- ^ icon fa-glide 4.6
+  | FaGlideG                               -- ^ icon fa-glide-g 4.6
+  | FaGlobe                                -- ^ icon fa-globe
+  | FaGoogle                               -- ^ icon fa-google 4.1
+  | FaGooglePlus                           -- ^ icon fa-google-plus
+  | FaGooglePlusCircle                     -- ^ icon alias fa-google-plus-circle (see 'FaGooglePlusOfficial') 4.6
+  | FaGooglePlusOfficial                   -- ^ icon fa-google-plus-official 4.6
+  | FaGooglePlusSquare                     -- ^ icon fa-google-plus-square
+  | FaGoogleWallet                         -- ^ icon fa-google-wallet 4.2
+  | FaGraduationCap                        -- ^ icon fa-graduation-cap 4.1
+  | FaGratipay                             -- ^ icon fa-gratipay
+  | FaGroup                                -- ^ icon alias fa-group (see 'FaUsers')
+  | FaHSquare                              -- ^ icon fa-h-square
+  | FaHackerNews                           -- ^ icon fa-hacker-news 4.1
+  | FaHandGrabO                            -- ^ icon alias fa-hand-grab-o (see 'FaHandRockO') 4.4
+  | FaHandLizardO                          -- ^ icon fa-hand-lizard-o 4.4
+  | FaHandODown                            -- ^ icon fa-hand-o-down
+  | FaHandOLeft                            -- ^ icon fa-hand-o-left
+  | FaHandORight                           -- ^ icon fa-hand-o-right
+  | FaHandOUp                              -- ^ icon fa-hand-o-up
+  | FaHandPaperO                           -- ^ icon fa-hand-paper-o 4.4
+  | FaHandPeaceO                           -- ^ icon fa-hand-peace-o 4.4
+  | FaHandPointerO                         -- ^ icon fa-hand-pointer-o 4.4
+  | FaHandRockO                            -- ^ icon fa-hand-rock-o 4.4
+  | FaHandScissorsO                        -- ^ icon fa-hand-scissors-o 4.4
+  | FaHandSpockO                           -- ^ icon fa-hand-spock-o 4.4
+  | FaHandStopO                            -- ^ icon alias fa-hand-stop-o (see 'FaHandPaperO') 4.4
+  | FaHardOfHearing                        -- ^ icon alias fa-hard-of-hearing (see 'FaDeaf') 4.6
+  | FaHashtag                              -- ^ icon fa-hashtag 4.5
+  | FaHddO                                 -- ^ icon fa-hdd-o
+  | FaHeader                               -- ^ icon fa-header 4.1
+  | FaHeadphones                           -- ^ icon fa-headphones
+  | FaHeart                                -- ^ icon fa-heart
+  | FaHeartO                               -- ^ icon fa-heart-o
+  | FaHeartbeat                            -- ^ icon fa-heartbeat 4.3
+  | FaHistory                              -- ^ icon fa-history 4.1
+  | FaHome                                 -- ^ icon fa-home
+  | FaHospitalO                            -- ^ icon fa-hospital-o
+  | FaHotel                                -- ^ icon alias fa-hotel (see 'FaBed') 4.3
+  | FaHourglass                            -- ^ icon fa-hourglass 4.4
+  | FaHourglass1                           -- ^ icon alias fa-hourglass-1 (see 'FaHourglassStart') 4.4
+  | FaHourglass2                           -- ^ icon alias fa-hourglass-2 (see 'FaHourglassHalf') 4.4
+  | FaHourglass3                           -- ^ icon alias fa-hourglass-3 (see 'FaHourglassEnd') 4.4
+  | FaHourglassEnd                         -- ^ icon fa-hourglass-end 4.4
+  | FaHourglassHalf                        -- ^ icon fa-hourglass-half 4.4
+  | FaHourglassO                           -- ^ icon fa-hourglass-o 4.4
+  | FaHourglassStart                       -- ^ icon fa-hourglass-start 4.4
+  | FaHouzz                                -- ^ icon fa-houzz 4.4
+  | FaHtml5                                -- ^ icon fa-html5
+  | FaICursor                              -- ^ icon fa-i-cursor 4.4
+  | FaIls                                  -- ^ icon fa-ils 4.2
+  | FaImage                                -- ^ icon alias fa-image (see 'FaPictureO')
+  | FaInbox                                -- ^ icon fa-inbox
+  | FaIndent                               -- ^ icon fa-indent
+  | FaIndustry                             -- ^ icon fa-industry 4.4
+  | FaInfo                                 -- ^ icon fa-info
+  | FaInfoCircle                           -- ^ icon fa-info-circle
+  | FaInr                                  -- ^ icon fa-inr
+  | FaInstagram                            -- ^ icon fa-instagram 4.6
+  | FaInstitution                          -- ^ icon alias fa-institution (see 'FaUniversity') 4.1
+  | FaInternetExplorer                     -- ^ icon fa-internet-explorer 4.4
+  | FaIntersex                             -- ^ icon alias fa-intersex (see 'FaTransgender') 4.3
+  | FaIoxhost                              -- ^ icon fa-ioxhost 4.2
+  | FaItalic                               -- ^ icon fa-italic
+  | FaJoomla                               -- ^ icon fa-joomla 4.1
+  | FaJpy                                  -- ^ icon fa-jpy
+  | FaJsfiddle                             -- ^ icon fa-jsfiddle 4.1
+  | FaKey                                  -- ^ icon fa-key
+  | FaKeyboardO                            -- ^ icon fa-keyboard-o
+  | FaKrw                                  -- ^ icon fa-krw
+  | FaLanguage                             -- ^ icon fa-language 4.1
+  | FaLaptop                               -- ^ icon fa-laptop
+  | FaLastfm                               -- ^ icon fa-lastfm 4.2
+  | FaLastfmSquare                         -- ^ icon fa-lastfm-square 4.2
+  | FaLeaf                                 -- ^ icon fa-leaf
+  | FaLeanpub                              -- ^ icon fa-leanpub 4.3
+  | FaLegal                                -- ^ icon alias fa-legal (see 'FaGavel')
+  | FaLemonO                               -- ^ icon fa-lemon-o
+  | FaLevelDown                            -- ^ icon fa-level-down
+  | FaLevelUp                              -- ^ icon fa-level-up
+  | FaLifeBouy                             -- ^ icon alias fa-life-bouy (see 'FaLifeRing') 4.1
+  | FaLifeBuoy                             -- ^ icon alias fa-life-buoy (see 'FaLifeRing') 4.1
+  | FaLifeRing                             -- ^ icon fa-life-ring 4.1
+  | FaLifeSaver                            -- ^ icon alias fa-life-saver (see 'FaLifeRing') 4.1
+  | FaLightbulbO                           -- ^ icon fa-lightbulb-o
+  | FaLineChart                            -- ^ icon fa-line-chart 4.2
+  | FaLink                                 -- ^ icon fa-link
+  | FaLinkedin                             -- ^ icon fa-linkedin
+  | FaLinkedinSquare                       -- ^ icon fa-linkedin-square
+  | FaLinux                                -- ^ icon fa-linux
+  | FaList                                 -- ^ icon fa-list
+  | FaListAlt                              -- ^ icon fa-list-alt
+  | FaListOl                               -- ^ icon fa-list-ol
+  | FaListUl                               -- ^ icon fa-list-ul
+  | FaLocationArrow                        -- ^ icon fa-location-arrow
+  | FaLock                                 -- ^ icon fa-lock
+  | FaLongArrowDown                        -- ^ icon fa-long-arrow-down
+  | FaLongArrowLeft                        -- ^ icon fa-long-arrow-left
+  | FaLongArrowRight                       -- ^ icon fa-long-arrow-right
+  | FaLongArrowUp                          -- ^ icon fa-long-arrow-up
+  | FaLowVision                            -- ^ icon fa-low-vision 4.6
+  | FaMagic                                -- ^ icon fa-magic
+  | FaMagnet                               -- ^ icon fa-magnet
+  | FaMailForward                          -- ^ icon alias fa-mail-forward (see 'FaShare')
+  | FaMailReply                            -- ^ icon alias fa-mail-reply (see 'FaReply')
+  | FaMailReplyAll                         -- ^ icon alias fa-mail-reply-all (see 'FaReplyAll')
+  | FaMale                                 -- ^ icon fa-male
+  | FaMap                                  -- ^ icon fa-map 4.4
+  | FaMapMarker                            -- ^ icon fa-map-marker
+  | FaMapO                                 -- ^ icon fa-map-o 4.4
+  | FaMapPin                               -- ^ icon fa-map-pin 4.4
+  | FaMapSigns                             -- ^ icon fa-map-signs 4.4
+  | FaMars                                 -- ^ icon fa-mars 4.3
+  | FaMarsDouble                           -- ^ icon fa-mars-double 4.3
+  | FaMarsStroke                           -- ^ icon fa-mars-stroke 4.3
+  | FaMarsStrokeH                          -- ^ icon fa-mars-stroke-h 4.3
+  | FaMarsStrokeV                          -- ^ icon fa-mars-stroke-v 4.3
+  | FaMaxcdn                               -- ^ icon fa-maxcdn
+  | FaMeanpath                             -- ^ icon fa-meanpath 4.2
+  | FaMedium                               -- ^ icon fa-medium 4.3
+  | FaMedkit                               -- ^ icon fa-medkit
+  | FaMehO                                 -- ^ icon fa-meh-o
+  | FaMercury                              -- ^ icon fa-mercury 4.3
+  | FaMicrophone                           -- ^ icon fa-microphone
+  | FaMicrophoneSlash                      -- ^ icon fa-microphone-slash
+  | FaMinus                                -- ^ icon fa-minus
+  | FaMinusCircle                          -- ^ icon fa-minus-circle
+  | FaMinusSquare                          -- ^ icon fa-minus-square
+  | FaMinusSquareO                         -- ^ icon fa-minus-square-o
+  | FaMixcloud                             -- ^ icon fa-mixcloud 4.5
+  | FaMobile                               -- ^ icon fa-mobile
+  | FaMobilePhone                          -- ^ icon alias fa-mobile-phone (see 'FaMobile')
+  | FaModx                                 -- ^ icon fa-modx 4.5
+  | FaMoney                                -- ^ icon fa-money
+  | FaMoonO                                -- ^ icon fa-moon-o
+  | FaMortarBoard                          -- ^ icon alias fa-mortar-board (see 'FaGraduationCap') 4.1
+  | FaMotorcycle                           -- ^ icon fa-motorcycle 4.3
+  | FaMousePointer                         -- ^ icon fa-mouse-pointer 4.4
+  | FaMusic                                -- ^ icon fa-music
+  | FaNavicon                              -- ^ icon alias fa-navicon (see 'FaBars')
+  | FaNeuter                               -- ^ icon fa-neuter 4.3
+  | FaNewspaperO                           -- ^ icon fa-newspaper-o 4.2
+  | FaObjectGroup                          -- ^ icon fa-object-group 4.4
+  | FaObjectUngroup                        -- ^ icon fa-object-ungroup 4.4
+  | FaOdnoklassniki                        -- ^ icon fa-odnoklassniki 4.4
+  | FaOdnoklassnikiSquare                  -- ^ icon fa-odnoklassniki-square 4.4
+  | FaOpencart                             -- ^ icon fa-opencart 4.4
+  | FaOpenid                               -- ^ icon fa-openid 4.1
+  | FaOpera                                -- ^ icon fa-opera 4.4
+  | FaOptinMonster                         -- ^ icon fa-optin-monster 4.4
+  | FaOutdent                              -- ^ icon fa-outdent
+  | FaPagelines                            -- ^ icon fa-pagelines 4.0
+  | FaPaintBrush                           -- ^ icon fa-paint-brush 4.2
+  | FaPaperPlane                           -- ^ icon fa-paper-plane 4.1
+  | FaPaperPlaneO                          -- ^ icon fa-paper-plane-o 4.1
+  | FaPaperclip                            -- ^ icon fa-paperclip
+  | FaParagraph                            -- ^ icon fa-paragraph 4.1
+  | FaPaste                                -- ^ icon alias fa-paste (see 'FaClipboard')
+  | FaPause                                -- ^ icon fa-pause
+  | FaPauseCircle                          -- ^ icon fa-pause-circle 4.5
+  | FaPauseCircleO                         -- ^ icon fa-pause-circle-o 4.5
+  | FaPaw                                  -- ^ icon fa-paw 4.1
+  | FaPaypal                               -- ^ icon fa-paypal 4.2
+  | FaPencil                               -- ^ icon fa-pencil
+  | FaPencilSquare                         -- ^ icon fa-pencil-square
+  | FaPencilSquareO                        -- ^ icon fa-pencil-square-o
+  | FaPercent                              -- ^ icon fa-percent 4.5
+  | FaPhone                                -- ^ icon fa-phone
+  | FaPhoneSquare                          -- ^ icon fa-phone-square
+  | FaPhoto                                -- ^ icon alias fa-photo (see 'FaPictureO')
+  | FaPictureO                             -- ^ icon fa-picture-o
+  | FaPieChart                             -- ^ icon fa-pie-chart 4.2
+  | FaPiedPiper                            -- ^ icon fa-pied-piper 4.6
+  | FaPiedPiperAlt                         -- ^ icon fa-pied-piper-alt 4.1
+  | FaPiedPiperPp                          -- ^ icon fa-pied-piper-pp 4.1
+  | FaPinterest                            -- ^ icon fa-pinterest
+  | FaPinterestP                           -- ^ icon fa-pinterest-p 4.3
+  | FaPinterestSquare                      -- ^ icon fa-pinterest-square
+  | FaPlane                                -- ^ icon fa-plane
+  | FaPlay                                 -- ^ icon fa-play
+  | FaPlayCircle                           -- ^ icon fa-play-circle
+  | FaPlayCircleO                          -- ^ icon fa-play-circle-o
+  | FaPlug                                 -- ^ icon fa-plug 4.2
+  | FaPlus                                 -- ^ icon fa-plus
+  | FaPlusCircle                           -- ^ icon fa-plus-circle
+  | FaPlusSquare                           -- ^ icon fa-plus-square
+  | FaPlusSquareO                          -- ^ icon fa-plus-square-o 4.0
+  | FaPowerOff                             -- ^ icon fa-power-off
+  | FaPrint                                -- ^ icon fa-print
+  | FaProductHunt                          -- ^ icon fa-product-hunt 4.5
+  | FaPuzzlePiece                          -- ^ icon fa-puzzle-piece
+  | FaQq                                   -- ^ icon fa-qq 4.1
+  | FaQrcode                               -- ^ icon fa-qrcode
+  | FaQuestion                             -- ^ icon fa-question
+  | FaQuestionCircle                       -- ^ icon fa-question-circle
+  | FaQuestionCircleO                      -- ^ icon fa-question-circle-o 4.6
+  | FaQuoteLeft                            -- ^ icon fa-quote-left
+  | FaQuoteRight                           -- ^ icon fa-quote-right
+  | FaRa                                   -- ^ icon alias fa-ra (see 'FaRebel') 4.1
+  | FaRandom                               -- ^ icon fa-random
+  | FaRebel                                -- ^ icon fa-rebel 4.1
+  | FaRecycle                              -- ^ icon fa-recycle 4.1
+  | FaReddit                               -- ^ icon fa-reddit 4.1
+  | FaRedditAlien                          -- ^ icon fa-reddit-alien 4.5
+  | FaRedditSquare                         -- ^ icon fa-reddit-square 4.1
+  | FaRefresh                              -- ^ icon fa-refresh
+  | FaRegistered                           -- ^ icon fa-registered 4.4
+  | FaRemove                               -- ^ icon alias fa-remove (see 'FaTimes')
+  | FaRenren                               -- ^ icon fa-renren
+  | FaReorder                              -- ^ icon alias fa-reorder (see 'FaBars')
+  | FaRepeat                               -- ^ icon fa-repeat
+  | FaReply                                -- ^ icon fa-reply
+  | FaReplyAll                             -- ^ icon fa-reply-all
+  | FaResistance                           -- ^ icon alias fa-resistance (see 'FaRebel') 4.1
+  | FaRetweet                              -- ^ icon fa-retweet
+  | FaRmb                                  -- ^ icon alias fa-rmb (see 'FaJpy')
+  | FaRoad                                 -- ^ icon fa-road
+  | FaRocket                               -- ^ icon fa-rocket
+  | FaRotateLeft                           -- ^ icon alias fa-rotate-left (see 'FaUndo')
+  | FaRotateRight                          -- ^ icon alias fa-rotate-right (see 'FaRepeat')
+  | FaRouble                               -- ^ icon alias fa-rouble (see 'FaRub') 4.0
+  | FaRss                                  -- ^ icon fa-rss
+  | FaRssSquare                            -- ^ icon fa-rss-square
+  | FaRub                                  -- ^ icon fa-rub 4.0
+  | FaRuble                                -- ^ icon alias fa-ruble (see 'FaRub') 4.0
+  | FaRupee                                -- ^ icon alias fa-rupee (see 'FaInr')
+  | FaSafari                               -- ^ icon fa-safari 4.4
+  | FaSave                                 -- ^ icon alias fa-save (see 'FaFloppyO')
+  | FaScissors                             -- ^ icon fa-scissors
+  | FaScribd                               -- ^ icon fa-scribd 4.5
+  | FaSearch                               -- ^ icon fa-search
+  | FaSearchMinus                          -- ^ icon fa-search-minus
+  | FaSearchPlus                           -- ^ icon fa-search-plus
+  | FaSellsy                               -- ^ icon fa-sellsy 4.3
+  | FaSend                                 -- ^ icon alias fa-send (see 'FaPaperPlane') 4.1
+  | FaSendO                                -- ^ icon alias fa-send-o (see 'FaPaperPlaneO') 4.1
+  | FaServer                               -- ^ icon fa-server 4.3
+  | FaShare                                -- ^ icon fa-share
+  | FaShareAlt                             -- ^ icon fa-share-alt 4.1
+  | FaShareAltSquare                       -- ^ icon fa-share-alt-square 4.1
+  | FaShareSquare                          -- ^ icon fa-share-square
+  | FaShareSquareO                         -- ^ icon fa-share-square-o
+  | FaShekel                               -- ^ icon alias fa-shekel (see 'FaIls') 4.2
+  | FaSheqel                               -- ^ icon alias fa-sheqel (see 'FaIls') 4.2
+  | FaShield                               -- ^ icon fa-shield
+  | FaShip                                 -- ^ icon fa-ship 4.3
+  | FaShirtsinbulk                         -- ^ icon fa-shirtsinbulk 4.3
+  | FaShoppingBag                          -- ^ icon fa-shopping-bag 4.5
+  | FaShoppingBasket                       -- ^ icon fa-shopping-basket 4.5
+  | FaShoppingCart                         -- ^ icon fa-shopping-cart
+  | FaSignIn                               -- ^ icon fa-sign-in
+  | FaSignLanguage                         -- ^ icon fa-sign-language 4.6
+  | FaSignOut                              -- ^ icon fa-sign-out
+  | FaSignal                               -- ^ icon fa-signal
+  | FaSigning                              -- ^ icon alias fa-signing (see 'FaSignLanguage') 4.6
+  | FaSimplybuilt                          -- ^ icon fa-simplybuilt 4.3
+  | FaSitemap                              -- ^ icon fa-sitemap
+  | FaSkyatlas                             -- ^ icon fa-skyatlas 4.3
+  | FaSkype                                -- ^ icon fa-skype
+  | FaSlack                                -- ^ icon fa-slack 4.1
+  | FaSliders                              -- ^ icon fa-sliders 4.1
+  | FaSlideshare                           -- ^ icon fa-slideshare 4.2
+  | FaSmileO                               -- ^ icon fa-smile-o
+  | FaSnapchat                             -- ^ icon fa-snapchat 4.6
+  | FaSnapchatGhost                        -- ^ icon fa-snapchat-ghost 4.6
+  | FaSnapchatSquare                       -- ^ icon fa-snapchat-square 4.6
+  | FaSoccerBallO                          -- ^ icon alias fa-soccer-ball-o (see 'FaFutbolO') 4.2
+  | FaSort                                 -- ^ icon fa-sort
+  | FaSortAlphaAsc                         -- ^ icon fa-sort-alpha-asc
+  | FaSortAlphaDesc                        -- ^ icon fa-sort-alpha-desc
+  | FaSortAmountAsc                        -- ^ icon fa-sort-amount-asc
+  | FaSortAmountDesc                       -- ^ icon fa-sort-amount-desc
+  | FaSortAsc                              -- ^ icon fa-sort-asc
+  | FaSortDesc                             -- ^ icon fa-sort-desc
+  | FaSortDown                             -- ^ icon alias fa-sort-down (see 'FaSortDesc')
+  | FaSortNumericAsc                       -- ^ icon fa-sort-numeric-asc
+  | FaSortNumericDesc                      -- ^ icon fa-sort-numeric-desc
+  | FaSortUp                               -- ^ icon alias fa-sort-up (see 'FaSortAsc')
+  | FaSoundcloud                           -- ^ icon fa-soundcloud 4.1
+  | FaSpaceShuttle                         -- ^ icon fa-space-shuttle 4.1
+  | FaSpinner                              -- ^ icon fa-spinner
+  | FaSpoon                                -- ^ icon fa-spoon 4.1
+  | FaSpotify                              -- ^ icon fa-spotify 4.1
+  | FaSquare                               -- ^ icon fa-square
+  | FaSquareO                              -- ^ icon fa-square-o
+  | FaStackExchange                        -- ^ icon fa-stack-exchange 4.0
+  | FaStackOverflow                        -- ^ icon fa-stack-overflow
+  | FaStar                                 -- ^ icon fa-star
+  | FaStarHalf                             -- ^ icon fa-star-half
+  | FaStarHalfEmpty                        -- ^ icon alias fa-star-half-empty (see 'FaStarHalfO')
+  | FaStarHalfFull                         -- ^ icon alias fa-star-half-full (see 'FaStarHalfO')
+  | FaStarHalfO                            -- ^ icon fa-star-half-o
+  | FaStarO                                -- ^ icon fa-star-o
+  | FaSteam                                -- ^ icon fa-steam 4.1
+  | FaSteamSquare                          -- ^ icon fa-steam-square 4.1
+  | FaStepBackward                         -- ^ icon fa-step-backward
+  | FaStepForward                          -- ^ icon fa-step-forward
+  | FaStethoscope                          -- ^ icon fa-stethoscope
+  | FaStickyNote                           -- ^ icon fa-sticky-note 4.4
+  | FaStickyNoteO                          -- ^ icon fa-sticky-note-o 4.4
+  | FaStop                                 -- ^ icon fa-stop
+  | FaStopCircle                           -- ^ icon fa-stop-circle 4.5
+  | FaStopCircleO                          -- ^ icon fa-stop-circle-o 4.5
+  | FaStreetView                           -- ^ icon fa-street-view 4.3
+  | FaStrikethrough                        -- ^ icon fa-strikethrough
+  | FaStumbleupon                          -- ^ icon fa-stumbleupon 4.1
+  | FaStumbleuponCircle                    -- ^ icon fa-stumbleupon-circle 4.1
+  | FaSubscript                            -- ^ icon fa-subscript
+  | FaSubway                               -- ^ icon fa-subway 4.3
+  | FaSuitcase                             -- ^ icon fa-suitcase
+  | FaSunO                                 -- ^ icon fa-sun-o
+  | FaSuperscript                          -- ^ icon fa-superscript
+  | FaSupport                              -- ^ icon alias fa-support (see 'FaLifeRing') 4.1
+  | FaTable                                -- ^ icon fa-table
+  | FaTablet                               -- ^ icon fa-tablet
+  | FaTachometer                           -- ^ icon fa-tachometer
+  | FaTag                                  -- ^ icon fa-tag
+  | FaTags                                 -- ^ icon fa-tags
+  | FaTasks                                -- ^ icon fa-tasks
+  | FaTaxi                                 -- ^ icon fa-taxi 4.1
+  | FaTelevision                           -- ^ icon fa-television 4.4
+  | FaTencentWeibo                         -- ^ icon fa-tencent-weibo 4.1
+  | FaTerminal                             -- ^ icon fa-terminal
+  | FaTextHeight                           -- ^ icon fa-text-height
+  | FaTextWidth                            -- ^ icon fa-text-width
+  | FaTh                                   -- ^ icon fa-th
+  | FaThLarge                              -- ^ icon fa-th-large
+  | FaThList                               -- ^ icon fa-th-list
+  | FaThemeisle                            -- ^ icon fa-themeisle 4.6
+  | FaThumbTack                            -- ^ icon fa-thumb-tack
+  | FaThumbsDown                           -- ^ icon fa-thumbs-down
+  | FaThumbsODown                          -- ^ icon fa-thumbs-o-down
+  | FaThumbsOUp                            -- ^ icon fa-thumbs-o-up
+  | FaThumbsUp                             -- ^ icon fa-thumbs-up
+  | FaTicket                               -- ^ icon fa-ticket
+  | FaTimes                                -- ^ icon fa-times
+  | FaTimesCircle                          -- ^ icon fa-times-circle
+  | FaTimesCircleO                         -- ^ icon fa-times-circle-o
+  | FaTint                                 -- ^ icon fa-tint
+  | FaToggleDown                           -- ^ icon alias fa-toggle-down (see 'FaCaretSquareODown')
+  | FaToggleLeft                           -- ^ icon alias fa-toggle-left (see 'FaCaretSquareOLeft') 4.0
+  | FaToggleOff                            -- ^ icon fa-toggle-off 4.2
+  | FaToggleOn                             -- ^ icon fa-toggle-on 4.2
+  | FaToggleRight                          -- ^ icon alias fa-toggle-right (see 'FaCaretSquareORight')
+  | FaToggleUp                             -- ^ icon alias fa-toggle-up (see 'FaCaretSquareOUp')
+  | FaTrademark                            -- ^ icon fa-trademark 4.4
+  | FaTrain                                -- ^ icon fa-train 4.3
+  | FaTransgender                          -- ^ icon fa-transgender 4.3
+  | FaTransgenderAlt                       -- ^ icon fa-transgender-alt 4.3
+  | FaTrash                                -- ^ icon fa-trash 4.2
+  | FaTrashO                               -- ^ icon fa-trash-o
+  | FaTree                                 -- ^ icon fa-tree 4.1
+  | FaTrello                               -- ^ icon fa-trello
+  | FaTripadvisor                          -- ^ icon fa-tripadvisor 4.4
+  | FaTrophy                               -- ^ icon fa-trophy
+  | FaTruck                                -- ^ icon fa-truck
+  | FaTry                                  -- ^ icon fa-try 4.0
+  | FaTty                                  -- ^ icon fa-tty 4.2
+  | FaTumblr                               -- ^ icon fa-tumblr
+  | FaTumblrSquare                         -- ^ icon fa-tumblr-square
+  | FaTurkishLira                          -- ^ icon alias fa-turkish-lira (see 'FaTry') 4.0
+  | FaTv                                   -- ^ icon alias fa-tv (see 'FaTelevision') 4.4
+  | FaTwitch                               -- ^ icon fa-twitch 4.2
+  | FaTwitter                              -- ^ icon fa-twitter
+  | FaTwitterSquare                        -- ^ icon fa-twitter-square
+  | FaUmbrella                             -- ^ icon fa-umbrella
+  | FaUnderline                            -- ^ icon fa-underline
+  | FaUndo                                 -- ^ icon fa-undo
+  | FaUniversalAccess                      -- ^ icon fa-universal-access 4.6
+  | FaUniversity                           -- ^ icon fa-university 4.1
+  | FaUnlink                               -- ^ icon alias fa-unlink (see 'FaChainBroken')
+  | FaUnlock                               -- ^ icon fa-unlock
+  | FaUnlockAlt                            -- ^ icon fa-unlock-alt
+  | FaUnsorted                             -- ^ icon alias fa-unsorted (see 'FaSort')
+  | FaUpload                               -- ^ icon fa-upload
+  | FaUsb                                  -- ^ icon fa-usb 4.5
+  | FaUsd                                  -- ^ icon fa-usd
+  | FaUser                                 -- ^ icon fa-user
+  | FaUserMd                               -- ^ icon fa-user-md
+  | FaUserPlus                             -- ^ icon fa-user-plus 4.3
+  | FaUserSecret                           -- ^ icon fa-user-secret 4.3
+  | FaUserTimes                            -- ^ icon fa-user-times 4.3
+  | FaUsers                                -- ^ icon fa-users
+  | FaVenus                                -- ^ icon fa-venus 4.3
+  | FaVenusDouble                          -- ^ icon fa-venus-double 4.3
+  | FaVenusMars                            -- ^ icon fa-venus-mars 4.3
+  | FaViacoin                              -- ^ icon fa-viacoin 4.3
+  | FaViadeo                               -- ^ icon fa-viadeo 4.6
+  | FaViadeoSquare                         -- ^ icon fa-viadeo-square 4.6
+  | FaVideoCamera                          -- ^ icon fa-video-camera
+  | FaVimeo                                -- ^ icon fa-vimeo 4.4
+  | FaVimeoSquare                          -- ^ icon fa-vimeo-square 4.0
+  | FaVine                                 -- ^ icon fa-vine 4.1
+  | FaVk                                   -- ^ icon fa-vk
+  | FaVolumeControlPhone                   -- ^ icon fa-volume-control-phone 4.6
+  | FaVolumeDown                           -- ^ icon fa-volume-down
+  | FaVolumeOff                            -- ^ icon fa-volume-off
+  | FaVolumeUp                             -- ^ icon fa-volume-up
+  | FaWarning                              -- ^ icon alias fa-warning (see 'FaExclamationTriangle')
+  | FaWechat                               -- ^ icon alias fa-wechat (see 'FaWeixin') 4.1
+  | FaWeibo                                -- ^ icon fa-weibo
+  | FaWeixin                               -- ^ icon fa-weixin 4.1
+  | FaWhatsapp                             -- ^ icon fa-whatsapp 4.3
+  | FaWheelchair                           -- ^ icon fa-wheelchair 4.0
+  | FaWheelchairAlt                        -- ^ icon fa-wheelchair-alt 4.6
+  | FaWifi                                 -- ^ icon fa-wifi 4.2
+  | FaWikipediaW                           -- ^ icon fa-wikipedia-w 4.4
+  | FaWindows                              -- ^ icon fa-windows
+  | FaWon                                  -- ^ icon alias fa-won (see 'FaKrw')
+  | FaWordpress                            -- ^ icon fa-wordpress 4.1
+  | FaWpbeginner                           -- ^ icon fa-wpbeginner 4.6
+  | FaWpforms                              -- ^ icon fa-wpforms 4.6
+  | FaWrench                               -- ^ icon fa-wrench
+  | FaXing                                 -- ^ icon fa-xing
+  | FaXingSquare                           -- ^ icon fa-xing-square
+  | FaYCombinator                          -- ^ icon fa-y-combinator 4.4
+  | FaYCombinatorSquare                    -- ^ icon alias fa-y-combinator-square (see 'FaHackerNews') 4.1
+  | FaYahoo                                -- ^ icon fa-yahoo 4.1
+  | FaYc                                   -- ^ icon alias fa-yc (see 'FaYCombinator') 4.4
+  | FaYcSquare                             -- ^ icon alias fa-yc-square (see 'FaHackerNews') 4.1
+  | FaYelp                                 -- ^ icon fa-yelp 4.2
+  | FaYen                                  -- ^ icon alias fa-yen (see 'FaJpy')
+  | FaYoast                                -- ^ icon fa-yoast 4.6
+  | FaYoutube                              -- ^ icon fa-youtube
+  | FaYoutubePlay                          -- ^ icon fa-youtube-play
+  | FaYoutubeSquare                        -- ^ icon fa-youtube-square
 
 -- | The CSS class string for a given 'FontAwesome' constructor.
 fontAwesomeClass :: IsString s => FontAwesome -> s

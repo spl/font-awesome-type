@@ -1,3 +1,5 @@
+{-# OPTIONS_GHC -Wall -Werror #-}
+
 -- | This module contains 'FontAwesome', a simple but comprehensive enumeration
 -- of all <http://fontawesome.io/ Font Awesome> icon classes as a data type.
 
@@ -10,6 +12,10 @@ import Data.String (IsString)
 -- (e.g. @FaMortarBoard@).
 data FontAwesome
   = Fa500px                                -- ^ icon fa-500px 4.4
+  | FaAddressBook                          -- ^ icon fa-address-book 4.7
+  | FaAddressBookO                         -- ^ icon fa-address-book-o 4.7
+  | FaAddressCard                          -- ^ icon fa-address-card 4.7
+  | FaAddressCardO                         -- ^ icon fa-address-card-o 4.7
   | FaAdjust                               -- ^ icon fa-adjust
   | FaAdn                                  -- ^ icon fa-adn
   | FaAlignCenter                          -- ^ icon fa-align-center
@@ -58,11 +64,15 @@ data FontAwesome
   | FaBackward                             -- ^ icon fa-backward
   | FaBalanceScale                         -- ^ icon fa-balance-scale 4.4
   | FaBan                                  -- ^ icon fa-ban
+  | FaBandcamp                             -- ^ icon fa-bandcamp 4.7
   | FaBank                                 -- ^ icon alias fa-bank (see 'FaUniversity') 4.1
   | FaBarChart                             -- ^ icon fa-bar-chart
   | FaBarChartO                            -- ^ icon alias fa-bar-chart-o (see 'FaBarChart')
   | FaBarcode                              -- ^ icon fa-barcode
   | FaBars                                 -- ^ icon fa-bars
+  | FaBath                                 -- ^ icon fa-bath 4.7
+  | FaBathtub                              -- ^ icon alias fa-bathtub (see 'FaBath') 4.7
+  | FaBattery                              -- ^ icon alias fa-battery (see 'FaBatteryFull') 4.4
   | FaBattery0                             -- ^ icon alias fa-battery-0 (see 'FaBatteryEmpty') 4.4
   | FaBattery1                             -- ^ icon alias fa-battery-1 (see 'FaBatteryQuarter') 4.4
   | FaBattery2                             -- ^ icon alias fa-battery-2 (see 'FaBatteryHalf') 4.4
@@ -212,19 +222,25 @@ data FontAwesome
   | FaDotCircleO                           -- ^ icon fa-dot-circle-o 4.0
   | FaDownload                             -- ^ icon fa-download
   | FaDribbble                             -- ^ icon fa-dribbble
+  | FaDriversLicense                       -- ^ icon alias fa-drivers-license (see 'FaIdCard') 4.7
+  | FaDriversLicenseO                      -- ^ icon alias fa-drivers-license-o (see 'FaIdCardO') 4.7
   | FaDropbox                              -- ^ icon fa-dropbox
   | FaDrupal                               -- ^ icon fa-drupal 4.1
   | FaEdge                                 -- ^ icon fa-edge 4.5
   | FaEdit                                 -- ^ icon alias fa-edit (see 'FaPencilSquareO')
+  | FaEercast                              -- ^ icon fa-eercast 4.7
   | FaEject                                -- ^ icon fa-eject
   | FaEllipsisH                            -- ^ icon fa-ellipsis-h
   | FaEllipsisV                            -- ^ icon fa-ellipsis-v
   | FaEmpire                               -- ^ icon fa-empire 4.1
   | FaEnvelope                             -- ^ icon fa-envelope
   | FaEnvelopeO                            -- ^ icon fa-envelope-o
+  | FaEnvelopeOpen                         -- ^ icon fa-envelope-open 4.7
+  | FaEnvelopeOpenO                        -- ^ icon fa-envelope-open-o 4.7
   | FaEnvelopeSquare                       -- ^ icon fa-envelope-square 4.1
   | FaEnvira                               -- ^ icon fa-envira 4.6
   | FaEraser                               -- ^ icon fa-eraser
+  | FaEtsy                                 -- ^ icon fa-etsy 4.7
   | FaEur                                  -- ^ icon fa-eur
   | FaEuro                                 -- ^ icon alias fa-euro (see 'FaEur')
   | FaExchange                             -- ^ icon fa-exchange
@@ -292,6 +308,7 @@ data FontAwesome
   | FaForumbee                             -- ^ icon fa-forumbee 4.3
   | FaForward                              -- ^ icon fa-forward
   | FaFoursquare                           -- ^ icon fa-foursquare
+  | FaFreeCodeCamp                         -- ^ icon fa-free-code-camp 4.7
   | FaFrownO                               -- ^ icon fa-frown-o
   | FaFutbolO                              -- ^ icon fa-futbol-o 4.2
   | FaGamepad                              -- ^ icon fa-gamepad
@@ -324,6 +341,7 @@ data FontAwesome
   | FaGoogleWallet                         -- ^ icon fa-google-wallet 4.2
   | FaGraduationCap                        -- ^ icon fa-graduation-cap 4.1
   | FaGratipay                             -- ^ icon fa-gratipay
+  | FaGrav                                 -- ^ icon fa-grav 4.7
   | FaGroup                                -- ^ icon alias fa-group (see 'FaUsers')
   | FaHSquare                              -- ^ icon fa-h-square
   | FaHackerNews                           -- ^ icon fa-hacker-news 4.1
@@ -340,6 +358,7 @@ data FontAwesome
   | FaHandScissorsO                        -- ^ icon fa-hand-scissors-o 4.4
   | FaHandSpockO                           -- ^ icon fa-hand-spock-o 4.4
   | FaHandStopO                            -- ^ icon alias fa-hand-stop-o (see 'FaHandPaperO') 4.4
+  | FaHandshakeO                           -- ^ icon fa-handshake-o 4.7
   | FaHardOfHearing                        -- ^ icon alias fa-hard-of-hearing (see 'FaDeaf') 4.6
   | FaHashtag                              -- ^ icon fa-hashtag 4.5
   | FaHddO                                 -- ^ icon fa-hdd-o
@@ -363,8 +382,12 @@ data FontAwesome
   | FaHouzz                                -- ^ icon fa-houzz 4.4
   | FaHtml5                                -- ^ icon fa-html5
   | FaICursor                              -- ^ icon fa-i-cursor 4.4
+  | FaIdBadge                              -- ^ icon fa-id-badge 4.7
+  | FaIdCard                               -- ^ icon fa-id-card 4.7
+  | FaIdCardO                              -- ^ icon fa-id-card-o 4.7
   | FaIls                                  -- ^ icon fa-ils 4.2
   | FaImage                                -- ^ icon alias fa-image (see 'FaPictureO')
+  | FaImdb                                 -- ^ icon fa-imdb 4.7
   | FaInbox                                -- ^ icon fa-inbox
   | FaIndent                               -- ^ icon fa-indent
   | FaIndustry                             -- ^ icon fa-industry 4.4
@@ -402,6 +425,7 @@ data FontAwesome
   | FaLink                                 -- ^ icon fa-link
   | FaLinkedin                             -- ^ icon fa-linkedin
   | FaLinkedinSquare                       -- ^ icon fa-linkedin-square
+  | FaLinode                               -- ^ icon fa-linode 4.7
   | FaLinux                                -- ^ icon fa-linux
   | FaList                                 -- ^ icon fa-list
   | FaListAlt                              -- ^ icon fa-list-alt
@@ -434,8 +458,10 @@ data FontAwesome
   | FaMeanpath                             -- ^ icon fa-meanpath 4.2
   | FaMedium                               -- ^ icon fa-medium 4.3
   | FaMedkit                               -- ^ icon fa-medkit
+  | FaMeetup                               -- ^ icon fa-meetup 4.7
   | FaMehO                                 -- ^ icon fa-meh-o
   | FaMercury                              -- ^ icon fa-mercury 4.3
+  | FaMicrochip                            -- ^ icon fa-microchip 4.7
   | FaMicrophone                           -- ^ icon fa-microphone
   | FaMicrophoneSlash                      -- ^ icon fa-microphone-slash
   | FaMinus                                -- ^ icon fa-minus
@@ -500,6 +526,7 @@ data FontAwesome
   | FaPlusCircle                           -- ^ icon fa-plus-circle
   | FaPlusSquare                           -- ^ icon fa-plus-square
   | FaPlusSquareO                          -- ^ icon fa-plus-square-o 4.0
+  | FaPodcast                              -- ^ icon fa-podcast 4.7
   | FaPowerOff                             -- ^ icon fa-power-off
   | FaPrint                                -- ^ icon fa-print
   | FaProductHunt                          -- ^ icon fa-product-hunt 4.5
@@ -509,10 +536,12 @@ data FontAwesome
   | FaQuestion                             -- ^ icon fa-question
   | FaQuestionCircle                       -- ^ icon fa-question-circle
   | FaQuestionCircleO                      -- ^ icon fa-question-circle-o 4.6
+  | FaQuora                                -- ^ icon fa-quora 4.7
   | FaQuoteLeft                            -- ^ icon fa-quote-left
   | FaQuoteRight                           -- ^ icon fa-quote-right
   | FaRa                                   -- ^ icon alias fa-ra (see 'FaRebel') 4.1
   | FaRandom                               -- ^ icon fa-random
+  | FaRavelry                              -- ^ icon fa-ravelry 4.7
   | FaRebel                                -- ^ icon fa-rebel 4.1
   | FaRecycle                              -- ^ icon fa-recycle 4.1
   | FaReddit                               -- ^ icon fa-reddit 4.1
@@ -539,6 +568,7 @@ data FontAwesome
   | FaRub                                  -- ^ icon fa-rub 4.0
   | FaRuble                                -- ^ icon alias fa-ruble (see 'FaRub') 4.0
   | FaRupee                                -- ^ icon alias fa-rupee (see 'FaInr')
+  | FaS15                                  -- ^ icon alias fa-s15 (see 'FaBath') 4.7
   | FaSafari                               -- ^ icon fa-safari 4.4
   | FaSave                                 -- ^ icon alias fa-save (see 'FaFloppyO')
   | FaScissors                             -- ^ icon fa-scissors
@@ -563,6 +593,7 @@ data FontAwesome
   | FaShoppingBag                          -- ^ icon fa-shopping-bag 4.5
   | FaShoppingBasket                       -- ^ icon fa-shopping-basket 4.5
   | FaShoppingCart                         -- ^ icon fa-shopping-cart
+  | FaShower                               -- ^ icon fa-shower 4.7
   | FaSignIn                               -- ^ icon fa-sign-in
   | FaSignLanguage                         -- ^ icon fa-sign-language 4.6
   | FaSignOut                              -- ^ icon fa-sign-out
@@ -579,6 +610,7 @@ data FontAwesome
   | FaSnapchat                             -- ^ icon fa-snapchat 4.6
   | FaSnapchatGhost                        -- ^ icon fa-snapchat-ghost 4.6
   | FaSnapchatSquare                       -- ^ icon fa-snapchat-square 4.6
+  | FaSnowflakeO                           -- ^ icon fa-snowflake-o 4.7
   | FaSoccerBallO                          -- ^ icon alias fa-soccer-ball-o (see 'FaFutbolO') 4.2
   | FaSort                                 -- ^ icon fa-sort
   | FaSortAlphaAsc                         -- ^ icon fa-sort-alpha-asc
@@ -624,6 +656,7 @@ data FontAwesome
   | FaSubway                               -- ^ icon fa-subway 4.3
   | FaSuitcase                             -- ^ icon fa-suitcase
   | FaSunO                                 -- ^ icon fa-sun-o
+  | FaSuperpowers                          -- ^ icon fa-superpowers 4.7
   | FaSuperscript                          -- ^ icon fa-superscript
   | FaSupport                              -- ^ icon alias fa-support (see 'FaLifeRing') 4.1
   | FaTable                                -- ^ icon fa-table
@@ -633,6 +666,7 @@ data FontAwesome
   | FaTags                                 -- ^ icon fa-tags
   | FaTasks                                -- ^ icon fa-tasks
   | FaTaxi                                 -- ^ icon fa-taxi 4.1
+  | FaTelegram                             -- ^ icon fa-telegram 4.7
   | FaTelevision                           -- ^ icon fa-television 4.4
   | FaTencentWeibo                         -- ^ icon fa-tencent-weibo 4.1
   | FaTerminal                             -- ^ icon fa-terminal
@@ -642,6 +676,17 @@ data FontAwesome
   | FaThLarge                              -- ^ icon fa-th-large
   | FaThList                               -- ^ icon fa-th-list
   | FaThemeisle                            -- ^ icon fa-themeisle 4.6
+  | FaThermometer                          -- ^ icon alias fa-thermometer (see 'FaThermometerFull') 4.7
+  | FaThermometer0                         -- ^ icon alias fa-thermometer-0 (see 'FaThermometerEmpty') 4.7
+  | FaThermometer1                         -- ^ icon alias fa-thermometer-1 (see 'FaThermometerQuarter') 4.7
+  | FaThermometer2                         -- ^ icon alias fa-thermometer-2 (see 'FaThermometerHalf') 4.7
+  | FaThermometer3                         -- ^ icon alias fa-thermometer-3 (see 'FaThermometerThreeQuarters') 4.7
+  | FaThermometer4                         -- ^ icon alias fa-thermometer-4 (see 'FaThermometerFull') 4.7
+  | FaThermometerEmpty                     -- ^ icon fa-thermometer-empty 4.7
+  | FaThermometerFull                      -- ^ icon fa-thermometer-full 4.7
+  | FaThermometerHalf                      -- ^ icon fa-thermometer-half 4.7
+  | FaThermometerQuarter                   -- ^ icon fa-thermometer-quarter 4.7
+  | FaThermometerThreeQuarters             -- ^ icon fa-thermometer-three-quarters 4.7
   | FaThumbTack                            -- ^ icon fa-thumb-tack
   | FaThumbsDown                           -- ^ icon fa-thumbs-down
   | FaThumbsODown                          -- ^ icon fa-thumbs-o-down
@@ -651,6 +696,8 @@ data FontAwesome
   | FaTimes                                -- ^ icon fa-times
   | FaTimesCircle                          -- ^ icon fa-times-circle
   | FaTimesCircleO                         -- ^ icon fa-times-circle-o
+  | FaTimesRectangle                       -- ^ icon alias fa-times-rectangle (see 'FaWindowClose') 4.7
+  | FaTimesRectangleO                      -- ^ icon alias fa-times-rectangle-o (see 'FaWindowCloseO') 4.7
   | FaTint                                 -- ^ icon fa-tint
   | FaToggleDown                           -- ^ icon alias fa-toggle-down (see 'FaCaretSquareODown')
   | FaToggleLeft                           -- ^ icon alias fa-toggle-left (see 'FaCaretSquareOLeft') 4.0
@@ -691,11 +738,16 @@ data FontAwesome
   | FaUsb                                  -- ^ icon fa-usb 4.5
   | FaUsd                                  -- ^ icon fa-usd
   | FaUser                                 -- ^ icon fa-user
+  | FaUserCircle                           -- ^ icon fa-user-circle 4.7
+  | FaUserCircleO                          -- ^ icon fa-user-circle-o 4.7
   | FaUserMd                               -- ^ icon fa-user-md
+  | FaUserO                                -- ^ icon fa-user-o 4.7
   | FaUserPlus                             -- ^ icon fa-user-plus 4.3
   | FaUserSecret                           -- ^ icon fa-user-secret 4.3
   | FaUserTimes                            -- ^ icon fa-user-times 4.3
   | FaUsers                                -- ^ icon fa-users
+  | FaVcard                                -- ^ icon alias fa-vcard (see 'FaAddressCard') 4.7
+  | FaVcardO                               -- ^ icon alias fa-vcard-o (see 'FaAddressCardO') 4.7
   | FaVenus                                -- ^ icon fa-venus 4.3
   | FaVenusDouble                          -- ^ icon fa-venus-double 4.3
   | FaVenusMars                            -- ^ icon fa-venus-mars 4.3
@@ -720,10 +772,16 @@ data FontAwesome
   | FaWheelchairAlt                        -- ^ icon fa-wheelchair-alt 4.6
   | FaWifi                                 -- ^ icon fa-wifi 4.2
   | FaWikipediaW                           -- ^ icon fa-wikipedia-w 4.4
+  | FaWindowClose                          -- ^ icon fa-window-close 4.7
+  | FaWindowCloseO                         -- ^ icon fa-window-close-o 4.7
+  | FaWindowMaximize                       -- ^ icon fa-window-maximize 4.7
+  | FaWindowMinimize                       -- ^ icon fa-window-restore 4.7
+  | FaWindowRestore                        -- ^ icon fa-window-minimize 4.7
   | FaWindows                              -- ^ icon fa-windows
   | FaWon                                  -- ^ icon alias fa-won (see 'FaKrw')
   | FaWordpress                            -- ^ icon fa-wordpress 4.1
   | FaWpbeginner                           -- ^ icon fa-wpbeginner 4.6
+  | FaWpexplorer                           -- ^ icon fa-wpexplorer 4.7
   | FaWpforms                              -- ^ icon fa-wpforms 4.6
   | FaWrench                               -- ^ icon fa-wrench
   | FaXing                                 -- ^ icon fa-xing
@@ -744,6 +802,10 @@ data FontAwesome
 fontAwesomeClass :: IsString s => FontAwesome -> s
 fontAwesomeClass = \case
   Fa500px                                -> "fa-500px"
+  FaAddressBook                          -> "fa-address-book"
+  FaAddressBookO                         -> "fa-address-book-o"
+  FaAddressCard                          -> "fa-address-card"
+  FaAddressCardO                         -> "fa-address-card-o"
   FaAdjust                               -> "fa-adjust"
   FaAdn                                  -> "fa-adn"
   FaAlignCenter                          -> "fa-align-center"
@@ -792,11 +854,15 @@ fontAwesomeClass = \case
   FaBackward                             -> "fa-backward"
   FaBalanceScale                         -> "fa-balance-scale"
   FaBan                                  -> "fa-ban"
+  FaBandcamp                             -> "fa-bandcamp"
   FaBank                                 -> "fa-bank"
   FaBarChart                             -> "fa-bar-chart"
   FaBarChartO                            -> "fa-bar-chart-o"
   FaBarcode                              -> "fa-barcode"
   FaBars                                 -> "fa-bars"
+  FaBath                                 -> "fa-bath"
+  FaBathtub                              -> "fa-bathtub"
+  FaBattery                              -> "fa-battery"
   FaBattery0                             -> "fa-battery-0"
   FaBattery1                             -> "fa-battery-1"
   FaBattery2                             -> "fa-battery-2"
@@ -946,19 +1012,25 @@ fontAwesomeClass = \case
   FaDotCircleO                           -> "fa-dot-circle-o"
   FaDownload                             -> "fa-download"
   FaDribbble                             -> "fa-dribbble"
+  FaDriversLicense                       -> "fa-drivers-license"
+  FaDriversLicenseO                      -> "fa-drivers-license-o"
   FaDropbox                              -> "fa-dropbox"
   FaDrupal                               -> "fa-drupal"
   FaEdge                                 -> "fa-edge"
   FaEdit                                 -> "fa-edit"
+  FaEercast                              -> "fa-eercast"
   FaEject                                -> "fa-eject"
   FaEllipsisH                            -> "fa-ellipsis-h"
   FaEllipsisV                            -> "fa-ellipsis-v"
   FaEmpire                               -> "fa-empire"
   FaEnvelope                             -> "fa-envelope"
   FaEnvelopeO                            -> "fa-envelope-o"
+  FaEnvelopeOpen                         -> "fa-envelope-open"
+  FaEnvelopeOpenO                        -> "fa-envelope-open-o"
   FaEnvelopeSquare                       -> "fa-envelope-square"
   FaEnvira                               -> "fa-envira"
   FaEraser                               -> "fa-eraser"
+  FaEtsy                                 -> "fa-etsy"
   FaEur                                  -> "fa-eur"
   FaEuro                                 -> "fa-euro"
   FaExchange                             -> "fa-exchange"
@@ -1026,6 +1098,7 @@ fontAwesomeClass = \case
   FaForumbee                             -> "fa-forumbee"
   FaForward                              -> "fa-forward"
   FaFoursquare                           -> "fa-foursquare"
+  FaFreeCodeCamp                         -> "fa-free-code-camp"
   FaFrownO                               -> "fa-frown-o"
   FaFutbolO                              -> "fa-futbol-o"
   FaGamepad                              -> "fa-gamepad"
@@ -1058,6 +1131,7 @@ fontAwesomeClass = \case
   FaGoogleWallet                         -> "fa-google-wallet"
   FaGraduationCap                        -> "fa-graduation-cap"
   FaGratipay                             -> "fa-gratipay"
+  FaGrav                                 -> "fa-grav"
   FaGroup                                -> "fa-group"
   FaHSquare                              -> "fa-h-square"
   FaHackerNews                           -> "fa-hacker-news"
@@ -1074,6 +1148,7 @@ fontAwesomeClass = \case
   FaHandScissorsO                        -> "fa-hand-scissors-o"
   FaHandSpockO                           -> "fa-hand-spock-o"
   FaHandStopO                            -> "fa-hand-stop-o"
+  FaHandshakeO                           -> "fa-handshake-o"
   FaHardOfHearing                        -> "fa-hard-of-hearing"
   FaHashtag                              -> "fa-hashtag"
   FaHddO                                 -> "fa-hdd-o"
@@ -1097,8 +1172,12 @@ fontAwesomeClass = \case
   FaHouzz                                -> "fa-houzz"
   FaHtml5                                -> "fa-html5"
   FaICursor                              -> "fa-i-cursor"
+  FaIdBadge                              -> "fa-id-badge"
+  FaIdCard                               -> "fa-id-card"
+  FaIdCardO                              -> "fa-id-card-o"
   FaIls                                  -> "fa-ils"
   FaImage                                -> "fa-image"
+  FaImdb                                 -> "fa-imdb"
   FaInbox                                -> "fa-inbox"
   FaIndent                               -> "fa-indent"
   FaIndustry                             -> "fa-industry"
@@ -1136,6 +1215,7 @@ fontAwesomeClass = \case
   FaLink                                 -> "fa-link"
   FaLinkedin                             -> "fa-linkedin"
   FaLinkedinSquare                       -> "fa-linkedin-square"
+  FaLinode                               -> "fa-linode"
   FaLinux                                -> "fa-linux"
   FaList                                 -> "fa-list"
   FaListAlt                              -> "fa-list-alt"
@@ -1168,8 +1248,10 @@ fontAwesomeClass = \case
   FaMeanpath                             -> "fa-meanpath"
   FaMedium                               -> "fa-medium"
   FaMedkit                               -> "fa-medkit"
+  FaMeetup                               -> "fa-meetup"
   FaMehO                                 -> "fa-meh-o"
   FaMercury                              -> "fa-mercury"
+  FaMicrochip                            -> "fa-microchip"
   FaMicrophone                           -> "fa-microphone"
   FaMicrophoneSlash                      -> "fa-microphone-slash"
   FaMinus                                -> "fa-minus"
@@ -1234,6 +1316,7 @@ fontAwesomeClass = \case
   FaPlusCircle                           -> "fa-plus-circle"
   FaPlusSquare                           -> "fa-plus-square"
   FaPlusSquareO                          -> "fa-plus-square-o"
+  FaPodcast                              -> "fa-podcast"
   FaPowerOff                             -> "fa-power-off"
   FaPrint                                -> "fa-print"
   FaProductHunt                          -> "fa-product-hunt"
@@ -1243,10 +1326,12 @@ fontAwesomeClass = \case
   FaQuestion                             -> "fa-question"
   FaQuestionCircle                       -> "fa-question-circle"
   FaQuestionCircleO                      -> "fa-question-circle-o"
+  FaQuora                                -> "fa-quora"
   FaQuoteLeft                            -> "fa-quote-left"
   FaQuoteRight                           -> "fa-quote-right"
   FaRa                                   -> "fa-ra"
   FaRandom                               -> "fa-random"
+  FaRavelry                              -> "fa-ravelry"
   FaRebel                                -> "fa-rebel"
   FaRecycle                              -> "fa-recycle"
   FaReddit                               -> "fa-reddit"
@@ -1273,6 +1358,7 @@ fontAwesomeClass = \case
   FaRub                                  -> "fa-rub"
   FaRuble                                -> "fa-ruble"
   FaRupee                                -> "fa-rupee"
+  FaS15                                  -> "fa-s15"
   FaSafari                               -> "fa-safari"
   FaSave                                 -> "fa-save"
   FaScissors                             -> "fa-scissors"
@@ -1297,6 +1383,7 @@ fontAwesomeClass = \case
   FaShoppingBag                          -> "fa-shopping-bag"
   FaShoppingBasket                       -> "fa-shopping-basket"
   FaShoppingCart                         -> "fa-shopping-cart"
+  FaShower                               -> "fa-shower"
   FaSignIn                               -> "fa-sign-in"
   FaSignLanguage                         -> "fa-sign-language"
   FaSignOut                              -> "fa-sign-out"
@@ -1313,6 +1400,7 @@ fontAwesomeClass = \case
   FaSnapchat                             -> "fa-snapchat"
   FaSnapchatGhost                        -> "fa-snapchat-ghost"
   FaSnapchatSquare                       -> "fa-snapchat-square"
+  FaSnowflakeO                           -> "fa-snowflake-o"
   FaSoccerBallO                          -> "fa-soccer-ball-o"
   FaSort                                 -> "fa-sort"
   FaSortAlphaAsc                         -> "fa-sort-alpha-asc"
@@ -1358,6 +1446,7 @@ fontAwesomeClass = \case
   FaSubway                               -> "fa-subway"
   FaSuitcase                             -> "fa-suitcase"
   FaSunO                                 -> "fa-sun-o"
+  FaSuperpowers                          -> "fa-superpowers"
   FaSuperscript                          -> "fa-superscript"
   FaSupport                              -> "fa-support"
   FaTable                                -> "fa-table"
@@ -1367,6 +1456,7 @@ fontAwesomeClass = \case
   FaTags                                 -> "fa-tags"
   FaTasks                                -> "fa-tasks"
   FaTaxi                                 -> "fa-taxi"
+  FaTelegram                             -> "fa-telegram"
   FaTelevision                           -> "fa-television"
   FaTencentWeibo                         -> "fa-tencent-weibo"
   FaTerminal                             -> "fa-terminal"
@@ -1376,6 +1466,17 @@ fontAwesomeClass = \case
   FaThLarge                              -> "fa-th-large"
   FaThList                               -> "fa-th-list"
   FaThemeisle                            -> "fa-themeisle"
+  FaThermometer                          -> "fa-thermometer"
+  FaThermometer0                         -> "fa-thermometer-0"
+  FaThermometer1                         -> "fa-thermometer-1"
+  FaThermometer2                         -> "fa-thermometer-2"
+  FaThermometer3                         -> "fa-thermometer-3"
+  FaThermometer4                         -> "fa-thermometer-4"
+  FaThermometerEmpty                     -> "fa-thermometer-empty"
+  FaThermometerFull                      -> "fa-thermometer-full"
+  FaThermometerHalf                      -> "fa-thermometer-half"
+  FaThermometerQuarter                   -> "fa-thermometer-quarter"
+  FaThermometerThreeQuarters             -> "fa-thermometer-three-quarters"
   FaThumbTack                            -> "fa-thumb-tack"
   FaThumbsDown                           -> "fa-thumbs-down"
   FaThumbsODown                          -> "fa-thumbs-o-down"
@@ -1385,6 +1486,8 @@ fontAwesomeClass = \case
   FaTimes                                -> "fa-times"
   FaTimesCircle                          -> "fa-times-circle"
   FaTimesCircleO                         -> "fa-times-circle-o"
+  FaTimesRectangle                       -> "fa-times-rectangle"
+  FaTimesRectangleO                      -> "fa-times-rectangle-o"
   FaTint                                 -> "fa-tint"
   FaToggleDown                           -> "fa-toggle-down"
   FaToggleLeft                           -> "fa-toggle-left"
@@ -1425,11 +1528,16 @@ fontAwesomeClass = \case
   FaUsb                                  -> "fa-usb"
   FaUsd                                  -> "fa-usd"
   FaUser                                 -> "fa-user"
+  FaUserCircle                           -> "fa-user-circle"
+  FaUserCircleO                          -> "fa-user-circle-o"
   FaUserMd                               -> "fa-user-md"
+  FaUserO                                -> "fa-user-o"
   FaUserPlus                             -> "fa-user-plus"
   FaUserSecret                           -> "fa-user-secret"
   FaUserTimes                            -> "fa-user-times"
   FaUsers                                -> "fa-users"
+  FaVcard                                -> "fa-vcard"
+  FaVcardO                               -> "fa-vcard-o"
   FaVenus                                -> "fa-venus"
   FaVenusDouble                          -> "fa-venus-double"
   FaVenusMars                            -> "fa-venus-mars"
@@ -1454,10 +1562,16 @@ fontAwesomeClass = \case
   FaWheelchairAlt                        -> "fa-wheelchair-alt"
   FaWifi                                 -> "fa-wifi"
   FaWikipediaW                           -> "fa-wikipedia-w"
+  FaWindowClose                          -> "fa-window-close"
+  FaWindowCloseO                         -> "fa-window-close-o"
+  FaWindowMaximize                       -> "fa-window-maximize"
+  FaWindowMinimize                       -> "fa-window-restore"
+  FaWindowRestore                        -> "fa-window-minimize"
   FaWindows                              -> "fa-windows"
   FaWon                                  -> "fa-won"
   FaWordpress                            -> "fa-wordpress"
   FaWpbeginner                           -> "fa-wpbeginner"
+  FaWpexplorer                           -> "fa-wpexplorer"
   FaWpforms                              -> "fa-wpforms"
   FaWrench                               -> "fa-wrench"
   FaXing                                 -> "fa-xing"
@@ -1479,6 +1593,10 @@ fontAwesomeClass = \case
 fontAwesomeChar :: FontAwesome -> Char
 fontAwesomeChar = \case
   Fa500px                                -> '\xf26e'
+  FaAddressBook                          -> '\xf2b9'
+  FaAddressBookO                         -> '\xf2ba'
+  FaAddressCard                          -> '\xf2bb'
+  FaAddressCardO                         -> '\xf2bc'
   FaAdjust                               -> '\xf042'
   FaAdn                                  -> '\xf170'
   FaAlignCenter                          -> '\xf037'
@@ -1527,11 +1645,15 @@ fontAwesomeChar = \case
   FaBackward                             -> '\xf04a'
   FaBalanceScale                         -> '\xf24e'
   FaBan                                  -> '\xf05e'
+  FaBandcamp                             -> '\xf2d5'
   FaBank                                 -> '\xf19c'
   FaBarChart                             -> '\xf080'
   FaBarChartO                            -> '\xf080'
   FaBarcode                              -> '\xf02a'
   FaBars                                 -> '\xf0c9'
+  FaBath                                 -> '\xf2cd'
+  FaBathtub                              -> '\xf2cd'
+  FaBattery                              -> '\xf240'
   FaBattery0                             -> '\xf244'
   FaBattery1                             -> '\xf243'
   FaBattery2                             -> '\xf242'
@@ -1681,19 +1803,25 @@ fontAwesomeChar = \case
   FaDotCircleO                           -> '\xf192'
   FaDownload                             -> '\xf019'
   FaDribbble                             -> '\xf17d'
+  FaDriversLicense                       -> '\xf2c2'
+  FaDriversLicenseO                      -> '\xf2c3'
   FaDropbox                              -> '\xf16b'
   FaDrupal                               -> '\xf1a9'
   FaEdge                                 -> '\xf282'
   FaEdit                                 -> '\xf044'
+  FaEercast                              -> '\xf2da'
   FaEject                                -> '\xf052'
   FaEllipsisH                            -> '\xf141'
   FaEllipsisV                            -> '\xf142'
   FaEmpire                               -> '\xf1d1'
   FaEnvelope                             -> '\xf0e0'
   FaEnvelopeO                            -> '\xf003'
+  FaEnvelopeOpen                         -> '\xf2b6'
+  FaEnvelopeOpenO                        -> '\xf2b7'
   FaEnvelopeSquare                       -> '\xf199'
   FaEnvira                               -> '\xf299'
   FaEraser                               -> '\xf12d'
+  FaEtsy                                 -> '\xf2d7'
   FaEur                                  -> '\xf153'
   FaEuro                                 -> '\xf153'
   FaExchange                             -> '\xf0ec'
@@ -1761,6 +1889,7 @@ fontAwesomeChar = \case
   FaForumbee                             -> '\xf211'
   FaForward                              -> '\xf04e'
   FaFoursquare                           -> '\xf180'
+  FaFreeCodeCamp                         -> '\xf2c5'
   FaFrownO                               -> '\xf119'
   FaFutbolO                              -> '\xf1e3'
   FaGamepad                              -> '\xf11b'
@@ -1793,6 +1922,7 @@ fontAwesomeChar = \case
   FaGoogleWallet                         -> '\xf1ee'
   FaGraduationCap                        -> '\xf19d'
   FaGratipay                             -> '\xf184'
+  FaGrav                                 -> '\xf2d6'
   FaGroup                                -> '\xf0c0'
   FaHSquare                              -> '\xf0fd'
   FaHackerNews                           -> '\xf1d4'
@@ -1809,6 +1939,7 @@ fontAwesomeChar = \case
   FaHandScissorsO                        -> '\xf257'
   FaHandSpockO                           -> '\xf259'
   FaHandStopO                            -> '\xf256'
+  FaHandshakeO                           -> '\xf2b5'
   FaHardOfHearing                        -> '\xf2a4'
   FaHashtag                              -> '\xf292'
   FaHddO                                 -> '\xf0a0'
@@ -1832,8 +1963,12 @@ fontAwesomeChar = \case
   FaHouzz                                -> '\xf27c'
   FaHtml5                                -> '\xf13b'
   FaICursor                              -> '\xf246'
+  FaIdBadge                              -> '\xf2c1'
+  FaIdCard                               -> '\xf2c2'
+  FaIdCardO                              -> '\xf2c3'
   FaIls                                  -> '\xf20b'
   FaImage                                -> '\xf03e'
+  FaImdb                                 -> '\xf2d8'
   FaInbox                                -> '\xf01c'
   FaIndent                               -> '\xf03c'
   FaIndustry                             -> '\xf275'
@@ -1871,6 +2006,7 @@ fontAwesomeChar = \case
   FaLink                                 -> '\xf0c1'
   FaLinkedin                             -> '\xf0e1'
   FaLinkedinSquare                       -> '\xf08c'
+  FaLinode                               -> '\xf2b8'
   FaLinux                                -> '\xf17c'
   FaList                                 -> '\xf03a'
   FaListAlt                              -> '\xf022'
@@ -1903,8 +2039,10 @@ fontAwesomeChar = \case
   FaMeanpath                             -> '\xf20c'
   FaMedium                               -> '\xf23a'
   FaMedkit                               -> '\xf0fa'
+  FaMeetup                               -> '\xf2e0'
   FaMehO                                 -> '\xf11a'
   FaMercury                              -> '\xf223'
+  FaMicrochip                            -> '\xf2db'
   FaMicrophone                           -> '\xf130'
   FaMicrophoneSlash                      -> '\xf131'
   FaMinus                                -> '\xf068'
@@ -1969,6 +2107,7 @@ fontAwesomeChar = \case
   FaPlusCircle                           -> '\xf055'
   FaPlusSquare                           -> '\xf0fe'
   FaPlusSquareO                          -> '\xf196'
+  FaPodcast                              -> '\xf2ce'
   FaPowerOff                             -> '\xf011'
   FaPrint                                -> '\xf02f'
   FaProductHunt                          -> '\xf288'
@@ -1978,10 +2117,12 @@ fontAwesomeChar = \case
   FaQuestion                             -> '\xf128'
   FaQuestionCircle                       -> '\xf059'
   FaQuestionCircleO                      -> '\xf29c'
+  FaQuora                                -> '\xf2c4'
   FaQuoteLeft                            -> '\xf10d'
   FaQuoteRight                           -> '\xf10e'
   FaRa                                   -> '\xf1d0'
   FaRandom                               -> '\xf074'
+  FaRavelry                              -> '\xf2d9'
   FaRebel                                -> '\xf1d0'
   FaRecycle                              -> '\xf1b8'
   FaReddit                               -> '\xf1a1'
@@ -2008,6 +2149,7 @@ fontAwesomeChar = \case
   FaRub                                  -> '\xf158'
   FaRuble                                -> '\xf158'
   FaRupee                                -> '\xf156'
+  FaS15                                  -> '\xf2cd'
   FaSafari                               -> '\xf267'
   FaSave                                 -> '\xf0c7'
   FaScissors                             -> '\xf0c4'
@@ -2032,6 +2174,7 @@ fontAwesomeChar = \case
   FaShoppingBag                          -> '\xf290'
   FaShoppingBasket                       -> '\xf291'
   FaShoppingCart                         -> '\xf07a'
+  FaShower                               -> '\xf2cc'
   FaSignIn                               -> '\xf090'
   FaSignLanguage                         -> '\xf2a7'
   FaSignOut                              -> '\xf08b'
@@ -2048,6 +2191,7 @@ fontAwesomeChar = \case
   FaSnapchat                             -> '\xf2ab'
   FaSnapchatGhost                        -> '\xf2ac'
   FaSnapchatSquare                       -> '\xf2ad'
+  FaSnowflakeO                           -> '\xf2dc'
   FaSoccerBallO                          -> '\xf1e3'
   FaSort                                 -> '\xf0dc'
   FaSortAlphaAsc                         -> '\xf15d'
@@ -2093,6 +2237,7 @@ fontAwesomeChar = \case
   FaSubway                               -> '\xf239'
   FaSuitcase                             -> '\xf0f2'
   FaSunO                                 -> '\xf185'
+  FaSuperpowers                          -> '\xf2dd'
   FaSuperscript                          -> '\xf12b'
   FaSupport                              -> '\xf1cd'
   FaTable                                -> '\xf0ce'
@@ -2102,6 +2247,7 @@ fontAwesomeChar = \case
   FaTags                                 -> '\xf02c'
   FaTasks                                -> '\xf0ae'
   FaTaxi                                 -> '\xf1ba'
+  FaTelegram                             -> '\xf2c6'
   FaTelevision                           -> '\xf26c'
   FaTencentWeibo                         -> '\xf1d5'
   FaTerminal                             -> '\xf120'
@@ -2111,6 +2257,17 @@ fontAwesomeChar = \case
   FaThLarge                              -> '\xf009'
   FaThList                               -> '\xf00b'
   FaThemeisle                            -> '\xf2b2'
+  FaThermometer                          -> '\xf2c7'
+  FaThermometer0                         -> '\xf2cb'
+  FaThermometer1                         -> '\xf2ca'
+  FaThermometer2                         -> '\xf2c9'
+  FaThermometer3                         -> '\xf2c8'
+  FaThermometer4                         -> '\xf2c7'
+  FaThermometerEmpty                     -> '\xf2cb'
+  FaThermometerFull                      -> '\xf2c7'
+  FaThermometerHalf                      -> '\xf2c9'
+  FaThermometerQuarter                   -> '\xf2ca'
+  FaThermometerThreeQuarters             -> '\xf2c8'
   FaThumbTack                            -> '\xf08d'
   FaThumbsDown                           -> '\xf165'
   FaThumbsODown                          -> '\xf088'
@@ -2120,6 +2277,8 @@ fontAwesomeChar = \case
   FaTimes                                -> '\xf00d'
   FaTimesCircle                          -> '\xf057'
   FaTimesCircleO                         -> '\xf05c'
+  FaTimesRectangle                       -> '\xf2d3'
+  FaTimesRectangleO                      -> '\xf2d4'
   FaTint                                 -> '\xf043'
   FaToggleDown                           -> '\xf150'
   FaToggleLeft                           -> '\xf191'
@@ -2160,11 +2319,16 @@ fontAwesomeChar = \case
   FaUsb                                  -> '\xf287'
   FaUsd                                  -> '\xf155'
   FaUser                                 -> '\xf007'
+  FaUserCircle                           -> '\xf2bd'
+  FaUserCircleO                          -> '\xf2be'
   FaUserMd                               -> '\xf0f0'
+  FaUserO                                -> '\xf2c0'
   FaUserPlus                             -> '\xf234'
   FaUserSecret                           -> '\xf21b'
   FaUserTimes                            -> '\xf235'
   FaUsers                                -> '\xf0c0'
+  FaVcard                                -> '\xf2bb'
+  FaVcardO                               -> '\xf2bc'
   FaVenus                                -> '\xf221'
   FaVenusDouble                          -> '\xf226'
   FaVenusMars                            -> '\xf228'
@@ -2189,10 +2353,16 @@ fontAwesomeChar = \case
   FaWheelchairAlt                        -> '\xf29b'
   FaWifi                                 -> '\xf1eb'
   FaWikipediaW                           -> '\xf266'
+  FaWindowClose                          -> '\xf2d3'
+  FaWindowCloseO                         -> '\xf2d4'
+  FaWindowMaximize                       -> '\xf2d0'
+  FaWindowMinimize                       -> '\xf2d1'
+  FaWindowRestore                        -> '\xf2d2'
   FaWindows                              -> '\xf17a'
   FaWon                                  -> '\xf159'
   FaWordpress                            -> '\xf19a'
   FaWpbeginner                           -> '\xf297'
+  FaWpexplorer                           -> '\xf2de'
   FaWpforms                              -> '\xf298'
   FaWrench                               -> '\xf0ad'
   FaXing                                 -> '\xf168'

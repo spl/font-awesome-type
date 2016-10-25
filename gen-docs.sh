@@ -37,7 +37,7 @@ cabal haddock --for-hackage --hyperlink-source
 pushd dist/doc/html > /dev/null
 
 docs_dir="$package-docs"
-module_doc="$docs_dir/Web-FontAwesomeType.html"
+module_doc="$docs_dir/Web-FontAwesome-Type.html"
 
 # Add <link> to font-awesome.min.css CDN
 cdn='https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css'

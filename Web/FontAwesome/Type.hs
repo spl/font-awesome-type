@@ -1,7 +1,7 @@
 -- | This module contains 'FontAwesome', a simple but comprehensive enumeration
 -- of all <http://fontawesome.io/ Font Awesome> icon classes as a data type.
 
-module Web.FontAwesomeType where
+module Web.FontAwesome.Type where
 
 import Data.String (IsString)
 
